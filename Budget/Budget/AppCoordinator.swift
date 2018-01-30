@@ -28,7 +28,12 @@ class AppCoordinator: Coordinator {
     // MARK: Public
     
     func start(with launchScreen: UIViewController) {
-        // do nothing
+        window.rootViewController = launchScreen
+        window.makeKeyAndVisible()
+        // do async task
+        let mainCoordinator = MainCoordinator(useCaseProvider)
+        add(child: mainCoordinator)
+        window.rootViewController = mainCoordinator.rootViewController
     }
     
 }
