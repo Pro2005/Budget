@@ -152,8 +152,8 @@
 			buildConfigurationList = 4C3DC9CF2020B180007CFE54 /* Build configuration list for PBXNativeTarget "Budget" */;
 			buildPhases = (
 				FAC78B863F95C458684D9260 /* [CP] Check Pods Manifest.lock */,
-				4C3DC9B92020B180007CFE54 /* Sources */,
 				4C3DC9EE2020B9DC007CFE54 /* R.swift */,
+				4C3DC9B92020B180007CFE54 /* Sources */,
 				4C3DC9F42020C0B5007CFE54 /* SwiftLint */,
 				4C3DC9BA2020B180007CFE54 /* Frameworks */,
 				4C3DC9BB2020B180007CFE54 /* Resources */,

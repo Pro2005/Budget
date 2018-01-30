@@ -11,21 +11,24 @@ import Domain
 
 class AppCoordinator: Coordinator {
     let useCaseProvider: UseCaseProvider
-    weak var parent: Coordinator? = nil
+    weak var parent: Coordinator?
     var children: [Coordinator] = []
     private let window: UIWindow
     var rootViewController: UIViewController? {
         return window.rootViewController
     }
+    
     // MARK: Initialization
+    
     init(with window: UIWindow, useCaseProvider: Domain.UseCaseProvider) {
         self.useCaseProvider = useCaseProvider
         self.window = window
     }
+    
     // MARK: Public
+    
     func start(with launchScreen: UIViewController) {
         // do nothing
     }
     
 }
-

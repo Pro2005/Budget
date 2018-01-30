@@ -11,7 +11,9 @@ import Domain
 
 struct AppInitializer {
     
-    static func initialize(with window: UIWindow, launchViewController: UIViewController, useCaseProvider: Domain.UseCaseProvider) -> Coordinator {
+    static func initialize(with window: UIWindow,
+                           launchViewController: UIViewController,
+                           useCaseProvider: Domain.UseCaseProvider) -> Coordinator {
         let coordinator = AppCoordinator(with: window, useCaseProvider: useCaseProvider)
         coordinator.start(with: launchViewController)
         return coordinator

@@ -16,12 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy public var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
     var coordinator: Coordinator!
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let launchViewController = R.storyboard.launchScreen.instantiateInitialViewController()!
         let useCaseProvider = Platform.UseCaseProvider()
-        coordinator = AppInitializer.initialize(with: window!, launchViewController: launchViewController, useCaseProvider: useCaseProvider)
+        coordinator = AppInitializer.initialize(with: window!,
+                                                launchViewController: launchViewController,
+                                                useCaseProvider: useCaseProvider)
         return true
     }
 
 }
-
