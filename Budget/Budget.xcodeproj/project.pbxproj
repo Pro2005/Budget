@@ -28,6 +28,15 @@
 		4C3DC9E72020B6D2007CFE54 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3DC9E62020B6D2007CFE54 /* Coordinator.swift */; };
 		4C3DC9ED2020B91A007CFE54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C3DC9EC2020B91A007CFE54 /* LaunchScreen.storyboard */; };
 		4C3DC9F02020BA19007CFE54 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3DC9EF2020BA19007CFE54 /* R.generated.swift */; };
+		4C7E527020221846001585D7 /* AddExpences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C7E526E20221846001585D7 /* AddExpences.storyboard */; };
+		4C7E527120221846001585D7 /* AddExpensesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E526F20221846001585D7 /* AddExpensesCoordinator.swift */; };
+		4C7E527420221879001585D7 /* ExpencesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E527320221879001585D7 /* ExpencesCoordinator.swift */; };
+		4C7E52762022188E001585D7 /* Expences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C7E52752022188E001585D7 /* Expences.storyboard */; };
+		4C7E527A202218CB001585D7 /* AddExpencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E5279202218CB001585D7 /* AddExpencesViewController.swift */; };
+		4C7E527C202218D8001585D7 /* AddExpencesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E527B202218D8001585D7 /* AddExpencesViewModel.swift */; };
+		4C7E527E202218EA001585D7 /* ExpencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E527D202218EA001585D7 /* ExpencesViewController.swift */; };
+		4C7E5280202218F8001585D7 /* ExpencesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E527F202218F8001585D7 /* ExpencesViewModel.swift */; };
+		4C7E528220221A1F001585D7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E528120221A1F001585D7 /* TabBarController.swift */; };
 		AF98D132DB08C7801D69F812 /* Pods_Budget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBEF361E060997568C29577 /* Pods_Budget.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +77,15 @@
 		4C3DC9E62020B6D2007CFE54 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		4C3DC9EC2020B91A007CFE54 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C3DC9EF2020BA19007CFE54 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		4C7E526E20221846001585D7 /* AddExpences.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddExpences.storyboard; sourceTree = "<group>"; };
+		4C7E526F20221846001585D7 /* AddExpensesCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExpensesCoordinator.swift; sourceTree = "<group>"; };
+		4C7E527320221879001585D7 /* ExpencesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpencesCoordinator.swift; sourceTree = "<group>"; };
+		4C7E52752022188E001585D7 /* Expences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Expences.storyboard; sourceTree = "<group>"; };
+		4C7E5279202218CB001585D7 /* AddExpencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpencesViewController.swift; sourceTree = "<group>"; };
+		4C7E527B202218D8001585D7 /* AddExpencesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpencesViewModel.swift; sourceTree = "<group>"; };
+		4C7E527D202218EA001585D7 /* ExpencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpencesViewController.swift; sourceTree = "<group>"; };
+		4C7E527F202218F8001585D7 /* ExpencesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpencesViewModel.swift; sourceTree = "<group>"; };
+		4C7E528120221A1F001585D7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		584DB6F43A07356B61B3BCEB /* Pods-Budget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Budget.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Budget/Pods-Budget.release.xcconfig"; sourceTree = "<group>"; };
 		9BBEF361E060997568C29577 /* Pods_Budget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Budget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8EB0FB8CE7D8CC13D34FE3F /* Pods-Budget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Budget.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Budget/Pods-Budget.debug.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +108,8 @@
 		088A5AF3202119FB00BF8BEA /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				4C7E52722022186C001585D7 /* Expences */,
+				4C7E526D20221846001585D7 /* AddExpences */,
 				088A5AF4202119FB00BF8BEA /* Main */,
 				088A5AF5202119FB00BF8BEA /* Menu */,
 			);
@@ -130,6 +150,7 @@
 			children = (
 				088A5B0020211E8B00BF8BEA /* ViewController.swift */,
 				088A5B0B20211FF900BF8BEA /* NavigationController.swift */,
+				4C7E528120221A1F001585D7 /* TabBarController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -213,6 +234,44 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		4C7E526D20221846001585D7 /* AddExpences */ = {
+			isa = PBXGroup;
+			children = (
+				4C7E5278202218BD001585D7 /* Main */,
+				4C7E526E20221846001585D7 /* AddExpences.storyboard */,
+				4C7E526F20221846001585D7 /* AddExpensesCoordinator.swift */,
+			);
+			path = AddExpences;
+			sourceTree = "<group>";
+		};
+		4C7E52722022186C001585D7 /* Expences */ = {
+			isa = PBXGroup;
+			children = (
+				4C7E5277202218B8001585D7 /* Main */,
+				4C7E527320221879001585D7 /* ExpencesCoordinator.swift */,
+				4C7E52752022188E001585D7 /* Expences.storyboard */,
+			);
+			path = Expences;
+			sourceTree = "<group>";
+		};
+		4C7E5277202218B8001585D7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4C7E527D202218EA001585D7 /* ExpencesViewController.swift */,
+				4C7E527F202218F8001585D7 /* ExpencesViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4C7E5278202218BD001585D7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4C7E5279202218CB001585D7 /* AddExpencesViewController.swift */,
+				4C7E527B202218D8001585D7 /* AddExpencesViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -281,6 +340,8 @@
 				088A5AFB20211A1A00BF8BEA /* Main.storyboard in Resources */,
 				4C3DC9ED2020B91A007CFE54 /* LaunchScreen.storyboard in Resources */,
 				4C3DC9E02020B63A007CFE54 /* Images.xcassets in Resources */,
+				4C7E52762022188E001585D7 /* Expences.storyboard in Resources */,
+				4C7E527020221846001585D7 /* AddExpences.storyboard in Resources */,
 				088A5AFD20211A2100BF8BEA /* Menu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,8 +444,15 @@
 				4C3DC9F02020BA19007CFE54 /* R.generated.swift in Sources */,
 				4C3DC9E22020B661007CFE54 /* AppInitializer.swift in Sources */,
 				088A5B0C20211FF900BF8BEA /* NavigationController.swift in Sources */,
+				4C7E5280202218F8001585D7 /* ExpencesViewModel.swift in Sources */,
 				088A5AF920211A1100BF8BEA /* MenuCoordinator.swift in Sources */,
 				088A5B0120211E8B00BF8BEA /* ViewController.swift in Sources */,
+				4C7E527120221846001585D7 /* AddExpensesCoordinator.swift in Sources */,
+				4C7E528220221A1F001585D7 /* TabBarController.swift in Sources */,
+				4C7E527C202218D8001585D7 /* AddExpencesViewModel.swift in Sources */,
+				4C7E527420221879001585D7 /* ExpencesCoordinator.swift in Sources */,
+				4C7E527A202218CB001585D7 /* AddExpencesViewController.swift in Sources */,
+				4C7E527E202218EA001585D7 /* ExpencesViewController.swift in Sources */,
 				4C3DC9C12020B180007CFE54 /* AppDelegate.swift in Sources */,
 				088A5B0520211EC300BF8BEA /* MainContainerViewModel.swift in Sources */,
 			);

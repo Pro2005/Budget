@@ -10,20 +10,20 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main Container View Controller-->
-        <scene sceneID="r7P-hj-4Uy">
+        <!--Expences View Controller-->
+        <scene sceneID="uXW-qU-Kdb">
             <objects>
-                <viewController storyboardIdentifier="MainContainerViewController" id="CvV-YL-0FB" customClass="MainContainerViewController" customModule="Budget" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eiv-cg-9mj">
+                <viewController storyboardIdentifier="ExpencesViewController" id="rtE-yf-fpk" customClass="ExpencesViewController" customModule="Budget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PEz-uE-CKX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="ixi-um-A4s"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="ov9-jC-t1d"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Uz-p9-qd7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UEp-hA-qZP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="185" y="26"/>
+            <point key="canvasLocation" x="-106" y="25"/>
         </scene>
     </scenes>
 </document>
