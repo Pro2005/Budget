@@ -18,6 +18,8 @@
 		088A5B0A20211F9C00BF8BEA /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088A5B0920211F9C00BF8BEA /* MenuViewModel.swift */; };
 		088A5B0C20211FF900BF8BEA /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088A5B0B20211FF900BF8BEA /* NavigationController.swift */; };
 		08A8A04A2022619300284D5D /* MenuPresentationBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A8A0492022619300284D5D /* MenuPresentationBehavior.swift */; };
+		08A8A04D2022658D00284D5D /* SelectCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A8A04C2022658D00284D5D /* SelectCategoryViewController.swift */; };
+		08A8A04F2022688600284D5D /* SelectCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A8A04E2022688600284D5D /* SelectCategoryViewModel.swift */; };
 		4C3DC9C12020B180007CFE54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3DC9C02020B180007CFE54 /* AppDelegate.swift */; };
 		4C3DC9D32020B572007CFE54 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C3DC9D22020B572007CFE54 /* Domain.framework */; };
 		4C3DC9D42020B572007CFE54 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4C3DC9D22020B572007CFE54 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -33,8 +35,6 @@
 		4C7E527120221846001585D7 /* AddExpensesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E526F20221846001585D7 /* AddExpensesCoordinator.swift */; };
 		4C7E527420221879001585D7 /* ExpencesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E527320221879001585D7 /* ExpencesCoordinator.swift */; };
 		4C7E52762022188E001585D7 /* Expences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C7E52752022188E001585D7 /* Expences.storyboard */; };
-		4C7E527A202218CB001585D7 /* AddExpencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E5279202218CB001585D7 /* AddExpencesViewController.swift */; };
-		4C7E527C202218D8001585D7 /* AddExpencesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E527B202218D8001585D7 /* AddExpencesViewModel.swift */; };
 		4C7E527E202218EA001585D7 /* ExpencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E527D202218EA001585D7 /* ExpencesViewController.swift */; };
 		4C7E5280202218F8001585D7 /* ExpencesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E527F202218F8001585D7 /* ExpencesViewModel.swift */; };
 		4C7E528220221A1F001585D7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E528120221A1F001585D7 /* TabBarController.swift */; };
@@ -68,6 +68,8 @@
 		088A5B0920211F9C00BF8BEA /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		088A5B0B20211FF900BF8BEA /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		08A8A0492022619300284D5D /* MenuPresentationBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPresentationBehavior.swift; sourceTree = "<group>"; };
+		08A8A04C2022658D00284D5D /* SelectCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryViewController.swift; sourceTree = "<group>"; };
+		08A8A04E2022688600284D5D /* SelectCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryViewModel.swift; sourceTree = "<group>"; };
 		4C3DC9BD2020B180007CFE54 /* Budget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C3DC9C02020B180007CFE54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C3DC9D22020B572007CFE54 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,8 +85,6 @@
 		4C7E526F20221846001585D7 /* AddExpensesCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExpensesCoordinator.swift; sourceTree = "<group>"; };
 		4C7E527320221879001585D7 /* ExpencesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpencesCoordinator.swift; sourceTree = "<group>"; };
 		4C7E52752022188E001585D7 /* Expences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Expences.storyboard; sourceTree = "<group>"; };
-		4C7E5279202218CB001585D7 /* AddExpencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpencesViewController.swift; sourceTree = "<group>"; };
-		4C7E527B202218D8001585D7 /* AddExpencesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpencesViewModel.swift; sourceTree = "<group>"; };
 		4C7E527D202218EA001585D7 /* ExpencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpencesViewController.swift; sourceTree = "<group>"; };
 		4C7E527F202218F8001585D7 /* ExpencesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpencesViewModel.swift; sourceTree = "<group>"; };
 		4C7E528120221A1F001585D7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -174,6 +174,39 @@
 			path = Behavior;
 			sourceTree = "<group>";
 		};
+		08A8A04B2022657F00284D5D /* SelectCategory */ = {
+			isa = PBXGroup;
+			children = (
+				08A8A051202269D800284D5D /* Cells */,
+				08A8A04C2022658D00284D5D /* SelectCategoryViewController.swift */,
+				08A8A04E2022688600284D5D /* SelectCategoryViewModel.swift */,
+			);
+			path = SelectCategory;
+			sourceTree = "<group>";
+		};
+		08A8A051202269D800284D5D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				08A8A05520226B7600284D5D /* Add */,
+				08A8A05420226B7600284D5D /* Item */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		08A8A05420226B7600284D5D /* Item */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
+		08A8A05520226B7600284D5D /* Add */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
 		37E2DDE6AA21B071934F191E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,7 +281,7 @@
 		4C7E526D20221846001585D7 /* AddExpences */ = {
 			isa = PBXGroup;
 			children = (
-				4C7E5278202218BD001585D7 /* Main */,
+				08A8A04B2022657F00284D5D /* SelectCategory */,
 				4C7E526F20221846001585D7 /* AddExpensesCoordinator.swift */,
 				4C7E526E20221846001585D7 /* AddExpences.storyboard */,
 			);
@@ -270,15 +303,6 @@
 			children = (
 				4C7E527D202218EA001585D7 /* ExpencesViewController.swift */,
 				4C7E527F202218F8001585D7 /* ExpencesViewModel.swift */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		4C7E5278202218BD001585D7 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				4C7E5279202218CB001585D7 /* AddExpencesViewController.swift */,
-				4C7E527B202218D8001585D7 /* AddExpencesViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -452,18 +476,18 @@
 				088A5B0A20211F9C00BF8BEA /* MenuViewModel.swift in Sources */,
 				4C3DC9E52020B6AC007CFE54 /* AppCoordinator.swift in Sources */,
 				088A5B0820211F8300BF8BEA /* MenuViewController.swift in Sources */,
+				08A8A04D2022658D00284D5D /* SelectCategoryViewController.swift in Sources */,
 				4C3DC9F02020BA19007CFE54 /* R.generated.swift in Sources */,
 				4C3DC9E22020B661007CFE54 /* AppInitializer.swift in Sources */,
 				088A5B0C20211FF900BF8BEA /* NavigationController.swift in Sources */,
 				4C7E5280202218F8001585D7 /* ExpencesViewModel.swift in Sources */,
 				088A5AF920211A1100BF8BEA /* MenuCoordinator.swift in Sources */,
+				08A8A04F2022688600284D5D /* SelectCategoryViewModel.swift in Sources */,
 				088A5B0120211E8B00BF8BEA /* ViewController.swift in Sources */,
 				4C7E527120221846001585D7 /* AddExpensesCoordinator.swift in Sources */,
 				4C7E528220221A1F001585D7 /* TabBarController.swift in Sources */,
-				4C7E527C202218D8001585D7 /* AddExpencesViewModel.swift in Sources */,
 				08A8A04A2022619300284D5D /* MenuPresentationBehavior.swift in Sources */,
 				4C7E527420221879001585D7 /* ExpencesCoordinator.swift in Sources */,
-				4C7E527A202218CB001585D7 /* AddExpencesViewController.swift in Sources */,
 				4C7E527E202218EA001585D7 /* ExpencesViewController.swift in Sources */,
 				4C3DC9C12020B180007CFE54 /* AppDelegate.swift in Sources */,
 				088A5B0520211EC300BF8BEA /* MainContainerViewModel.swift in Sources */,

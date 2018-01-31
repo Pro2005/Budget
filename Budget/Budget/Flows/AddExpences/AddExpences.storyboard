@@ -10,25 +10,31 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Add Expences View Controller-->
+        <!--Select Category View Controller-->
         <scene sceneID="blP-fG-Ud6">
             <objects>
-                <viewController storyboardIdentifier="AddExpencesViewController" id="qvW-YR-SU0" customClass="AddExpencesViewController" customModule="Budget" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectCategoryViewController" id="qvW-YR-SU0" customClass="SelectCategoryViewController" customModule="Budget" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vDe-yL-ejl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hm6-1V-kBk">
-                                <rect key="frame" x="171.5" y="323" width="31" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aon-3L-B5T">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewLayout key="collectionViewLayout" id="XYV-lw-AqZ"/>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="qvW-YR-SU0" id="bFL-ge-V6O"/>
+                                    <outlet property="delegate" destination="qvW-YR-SU0" id="6W9-ei-qu8"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hm6-1V-kBk" firstAttribute="centerX" secondItem="vDe-yL-ejl" secondAttribute="centerX" id="G2h-4u-K2f"/>
-                            <constraint firstItem="hm6-1V-kBk" firstAttribute="centerY" secondItem="vDe-yL-ejl" secondAttribute="centerY" id="Wdm-eh-pJ3"/>
+                            <constraint firstItem="0hs-Fb-NSX" firstAttribute="trailing" secondItem="aon-3L-B5T" secondAttribute="trailing" id="6j3-TO-4xn"/>
+                            <constraint firstItem="0hs-Fb-NSX" firstAttribute="bottom" secondItem="aon-3L-B5T" secondAttribute="bottom" id="FcU-tV-YwG"/>
+                            <constraint firstItem="aon-3L-B5T" firstAttribute="top" secondItem="0hs-Fb-NSX" secondAttribute="top" id="Kt7-i8-vQu"/>
+                            <constraint firstItem="aon-3L-B5T" firstAttribute="leading" secondItem="0hs-Fb-NSX" secondAttribute="leading" id="Mjl-Pj-bcY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0hs-Fb-NSX"/>
                     </view>

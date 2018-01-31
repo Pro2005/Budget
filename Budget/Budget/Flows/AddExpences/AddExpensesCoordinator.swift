@@ -19,15 +19,15 @@ class AddExpensesCoordinator: Coordinator {
     
     init(_ useCaseProvider: Domain.UseCaseProvider) {
         self.useCaseProvider = useCaseProvider
-        let navigationController = NavigationController(rootViewController: createMainViewController())
+        let navigationController = NavigationController(rootViewController: createSelectCategoryViewController())
         rootViewController = navigationController
     }
     
     // MARK: Private
     
-    private func createMainViewController() -> UIViewController {
-        let viewModel = AddExpencesViewModel()
-        let viewController = R.storyboard.addExpences.addExpencesViewController()!
+    private func createSelectCategoryViewController() -> UIViewController {
+        let viewModel = SelectCategoryViewModel()
+        let viewController = R.storyboard.addExpences.selectCategoryViewController()!
         viewController.viewModel = viewModel
         return viewController
     }
