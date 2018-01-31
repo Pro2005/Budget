@@ -17,7 +17,19 @@
                     <view key="view" contentMode="scaleToFill" id="4oI-nA-iur">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6L0-gV-sQB">
+                                <rect key="frame" x="165.5" y="323" width="43" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6L0-gV-sQB" firstAttribute="centerY" secondItem="4oI-nA-iur" secondAttribute="centerY" id="bQ5-CZ-PVU"/>
+                            <constraint firstItem="6L0-gV-sQB" firstAttribute="centerX" secondItem="4oI-nA-iur" secondAttribute="centerX" id="i7g-xm-Qxs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="5y5-AF-z5C"/>
                     </view>
                 </viewController>

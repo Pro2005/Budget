@@ -20,6 +20,7 @@ class MenuCoordinator: Coordinator {
     init(_ useCaseProvider: Domain.UseCaseProvider) {
         self.useCaseProvider = useCaseProvider
         let navigationController = NavigationController(rootViewController: createMainViewController())
+        navigationController.setNavigationBarHidden(true, animated: false)
         rootViewController = navigationController
     }
     
