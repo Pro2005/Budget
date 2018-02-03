@@ -12,24 +12,52 @@ class SelectCategoryViewController: ViewController {
     var viewModel: SelectCategoryViewModel!
     @IBOutlet private weak var collectionView: UICollectionView!
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setup()
+    }
+    
+    // MARK: Private
+    
+    private func setup() {
+        setupCollectionView()
+    }
+    
+    private func setupCollectionView() {
+        collectionView.register(R.nib.addCategoryCell)
+        collectionView.register(R.nib.categoryCell)
+    }
+    
 }
 
 extension SelectCategoryViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return viewModel.dataSource.count
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cellViewModel = viewModel.dataSource[indexPath.row]
+        switch cellViewModel.type {
+        case .addNew:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.nib.addCategoryCell, for: indexPath)!
+            cell.viewModel = cellViewModel as? AddCategoryCell.CellViewModel
+            return cell
+        case .default:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.nib.categoryCell, for: indexPath)!
+            cell.viewModel = cellViewModel as? CategoryCell.CellViewModel
+            return cell
+        }
     }
     
 }
 
 extension SelectCategoryViewController: UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ view: UICollectionView, layout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ view: UICollectionView,
+                        layout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         let items: CGFloat = 3
         let itemSpacing = collectionView(view, layout: layout, minimumInteritemSpacingForSectionAt: indexPath.section)
         let totalSpacing = (items - 1) * itemSpacing
@@ -40,19 +68,15 @@ extension SelectCategoryViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int)
-        -> CGFloat
-    {
+        -> CGFloat {
         return 4.0
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int)
-        -> CGFloat
-    {
+        -> CGFloat {
         return 4.0
     }
 
-
-    
 }

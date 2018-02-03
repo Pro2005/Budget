@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		087745C22025BB500096409E /* AddCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087745C12025BB500096409E /* AddCategoryCell.swift */; };
+		087745C42025BB5C0096409E /* AddCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 087745C32025BB5C0096409E /* AddCategoryCell.xib */; };
+		087745C62025BB660096409E /* AddCategoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087745C52025BB660096409E /* AddCategoryCellViewModel.swift */; };
+		087745C82025BBE00096409E /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087745C72025BBE00096409E /* CategoryCell.swift */; };
+		087745CA2025BBEA0096409E /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 087745C92025BBEA0096409E /* CategoryCell.xib */; };
+		087745CC2025BBF20096409E /* CategoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087745CB2025BBF20096409E /* CategoryCellViewModel.swift */; };
 		088A5AF720211A0700BF8BEA /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088A5AF620211A0700BF8BEA /* MainCoordinator.swift */; };
 		088A5AF920211A1100BF8BEA /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088A5AF820211A1100BF8BEA /* MenuCoordinator.swift */; };
 		088A5AFB20211A1A00BF8BEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 088A5AFA20211A1A00BF8BEA /* Main.storyboard */; };
@@ -57,6 +63,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		087745C12025BB500096409E /* AddCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryCell.swift; sourceTree = "<group>"; };
+		087745C32025BB5C0096409E /* AddCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCategoryCell.xib; sourceTree = "<group>"; };
+		087745C52025BB660096409E /* AddCategoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryCellViewModel.swift; sourceTree = "<group>"; };
+		087745C72025BBE00096409E /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		087745C92025BBEA0096409E /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		087745CB2025BBF20096409E /* CategoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCellViewModel.swift; sourceTree = "<group>"; };
 		088A5AF620211A0700BF8BEA /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		088A5AF820211A1100BF8BEA /* MenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
 		088A5AFA20211A1A00BF8BEA /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -196,6 +208,9 @@
 		08A8A05420226B7600284D5D /* Item */ = {
 			isa = PBXGroup;
 			children = (
+				087745C72025BBE00096409E /* CategoryCell.swift */,
+				087745C92025BBEA0096409E /* CategoryCell.xib */,
+				087745CB2025BBF20096409E /* CategoryCellViewModel.swift */,
 			);
 			path = Item;
 			sourceTree = "<group>";
@@ -203,6 +218,9 @@
 		08A8A05520226B7600284D5D /* Add */ = {
 			isa = PBXGroup;
 			children = (
+				087745C12025BB500096409E /* AddCategoryCell.swift */,
+				087745C32025BB5C0096409E /* AddCategoryCell.xib */,
+				087745C52025BB660096409E /* AddCategoryCellViewModel.swift */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -376,8 +394,10 @@
 				4C3DC9ED2020B91A007CFE54 /* LaunchScreen.storyboard in Resources */,
 				4C3DC9E02020B63A007CFE54 /* Images.xcassets in Resources */,
 				4C7E52762022188E001585D7 /* Expences.storyboard in Resources */,
+				087745C42025BB5C0096409E /* AddCategoryCell.xib in Resources */,
 				4C7E527020221846001585D7 /* AddExpences.storyboard in Resources */,
 				088A5AFD20211A2100BF8BEA /* Menu.storyboard in Resources */,
+				087745CA2025BBEA0096409E /* CategoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,13 +492,17 @@
 			files = (
 				4C3DC9E72020B6D2007CFE54 /* Coordinator.swift in Sources */,
 				088A5B0320211EA900BF8BEA /* MainContainerViewController.swift in Sources */,
+				087745C62025BB660096409E /* AddCategoryCellViewModel.swift in Sources */,
 				088A5AF720211A0700BF8BEA /* MainCoordinator.swift in Sources */,
 				088A5B0A20211F9C00BF8BEA /* MenuViewModel.swift in Sources */,
 				4C3DC9E52020B6AC007CFE54 /* AppCoordinator.swift in Sources */,
+				087745C22025BB500096409E /* AddCategoryCell.swift in Sources */,
 				088A5B0820211F8300BF8BEA /* MenuViewController.swift in Sources */,
 				08A8A04D2022658D00284D5D /* SelectCategoryViewController.swift in Sources */,
+				087745CC2025BBF20096409E /* CategoryCellViewModel.swift in Sources */,
 				4C3DC9F02020BA19007CFE54 /* R.generated.swift in Sources */,
 				4C3DC9E22020B661007CFE54 /* AppInitializer.swift in Sources */,
+				087745C82025BBE00096409E /* CategoryCell.swift in Sources */,
 				088A5B0C20211FF900BF8BEA /* NavigationController.swift in Sources */,
 				4C7E5280202218F8001585D7 /* ExpencesViewModel.swift in Sources */,
 				088A5AF920211A1100BF8BEA /* MenuCoordinator.swift in Sources */,
