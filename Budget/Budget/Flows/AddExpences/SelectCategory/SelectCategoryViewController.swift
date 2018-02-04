@@ -53,6 +53,15 @@ extension SelectCategoryViewController: UICollectionViewDataSource {
     
 }
 
+extension SelectCategoryViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cellViewModel = viewModel.dataSource[indexPath.row]
+        viewModel.select(cellViewModel)
+    }
+    
+}
+
 extension SelectCategoryViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ view: UICollectionView,

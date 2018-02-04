@@ -8,7 +8,12 @@
 
 import Foundation
 
+protocol SelectCategoryViewModelDelegate: class {
+    func selectCategoryViewModelWantAddCategory(_ viewModel: SelectCategoryViewModel)
+}
+
 struct SelectCategoryViewModel {
+    weak var delegate: SelectCategoryViewModelDelegate?
     private(set) var dataSource: [CategoryViewModelTypeable] = []
     
     init() {
@@ -19,7 +24,9 @@ struct SelectCategoryViewModel {
     // MARK: Public
     
     func select(_ item: CategoryViewModelTypeable) {
-        
+        if item.type == .addNew {
+            delegate?.selectCategoryViewModelWantAddCategory(self)
+        }
     }
     
 }

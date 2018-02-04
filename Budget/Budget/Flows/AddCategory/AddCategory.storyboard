@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Title-->
+        <scene sceneID="knD-LI-1FX">
+            <objects>
+                <viewController storyboardIdentifier="AddCategoryViewController" id="krB-gf-sK6" customClass="AddCategoryViewController" customModule="Budget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gh5-ib-QYm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Syg-Et-s5w">
+                                <rect key="frame" x="24" y="45" width="327" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="krB-gf-sK6" id="IgP-Oj-YRJ"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rw-Jn-0nG">
+                                <rect key="frame" x="168.5" y="120" width="37" height="34"/>
+                                <state key="normal" title="ADD">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="addTap" destination="krB-gf-sK6" eventType="touchUpInside" id="YPy-NJ-RQB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Syg-Et-s5w" firstAttribute="top" secondItem="iHU-v7-k7z" secondAttribute="top" constant="25" id="6rx-Uf-Pk4"/>
+                            <constraint firstItem="5rw-Jn-0nG" firstAttribute="centerX" secondItem="gh5-ib-QYm" secondAttribute="centerX" id="Qxw-e8-JpF"/>
+                            <constraint firstItem="Syg-Et-s5w" firstAttribute="leading" secondItem="iHU-v7-k7z" secondAttribute="leading" constant="24" id="byT-sN-Ijd"/>
+                            <constraint firstItem="5rw-Jn-0nG" firstAttribute="top" secondItem="Syg-Et-s5w" secondAttribute="bottom" constant="45" id="d3e-WV-kb0"/>
+                            <constraint firstItem="iHU-v7-k7z" firstAttribute="trailing" secondItem="Syg-Et-s5w" secondAttribute="trailing" constant="24" id="tg6-1A-uKr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iHU-v7-k7z"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="bMv-T3-s2F">
+                        <barButtonItem key="leftBarButtonItem" title="CLOSE" id="8fc-DK-9UY">
+                            <connections>
+                                <action selector="closeTap" destination="krB-gf-sK6" id="QOG-jr-O7d"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="5rw-Jn-0nG" id="AAg-VR-1yU"/>
+                        <outlet property="textField" destination="Syg-Et-s5w" id="FfS-Ws-NAT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gwy-1Y-Ljf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="38" y="170"/>
+        </scene>
+    </scenes>
+</document>

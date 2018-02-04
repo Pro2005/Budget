@@ -1,18 +1,31 @@
 PODS:
+  - IQKeyboardManagerSwift (5.0.7)
   - R.swift (4.0.0):
     - R.swift.Library (~> 4.0.0)
   - R.swift.Library (4.0.0)
+  - ReactiveCocoa (7.1.0):
+    - ReactiveSwift (~> 3.1)
+  - ReactiveSwift (3.1.0):
+    - Result (~> 3.2)
+  - Result (3.2.4)
   - SwiftLint (0.24.2)
 
 DEPENDENCIES:
+  - IQKeyboardManagerSwift (~> 5.0.7)
   - R.swift (~> 4.0.0)
+  - ReactiveCocoa (~> 7.1.0)
+  - ReactiveSwift (~> 3.1.0)
   - SwiftLint (~> 0.24.2)
 
 SPEC CHECKSUMS:
+  IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
   R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
   R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
+  ReactiveCocoa: 105ad96f6b8711f1ee7d165fc96587479298053b
+  ReactiveSwift: 5b26d2e988fe0eed2daf48c4054d1de74db50184
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   SwiftLint: 2aa21b96c8d13396a051bc1cb659d2ce1e0075b0
 
-PODFILE CHECKSUM: c4ffbcf6bba3b1f3454ded9cb2de37d95698c25c
+PODFILE CHECKSUM: 7d18a9338aeb17a0a774c5dd57758a1266852abb
 
 COCOAPODS: 1.3.1

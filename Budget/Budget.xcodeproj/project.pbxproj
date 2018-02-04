@@ -13,6 +13,11 @@
 		087745C82025BBE00096409E /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087745C72025BBE00096409E /* CategoryCell.swift */; };
 		087745CA2025BBEA0096409E /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 087745C92025BBEA0096409E /* CategoryCell.xib */; };
 		087745CC2025BBF20096409E /* CategoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087745CB2025BBF20096409E /* CategoryCellViewModel.swift */; };
+		087745CF2025C0E20096409E /* AddCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 087745CE2025C0E20096409E /* AddCategory.storyboard */; };
+		087745D12025C0EF0096409E /* AddCategoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087745D02025C0EF0096409E /* AddCategoryCoordinator.swift */; };
+		087745D42025C1100096409E /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087745D32025C1100096409E /* AddCategoryViewController.swift */; };
+		087745D62025C11A0096409E /* AddCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087745D52025C11A0096409E /* AddCategoryViewModel.swift */; };
+		087745D82025C55C0096409E /* AddCategoryPresentationBahavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087745D72025C55C0096409E /* AddCategoryPresentationBahavior.swift */; };
 		088A5AF720211A0700BF8BEA /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088A5AF620211A0700BF8BEA /* MainCoordinator.swift */; };
 		088A5AF920211A1100BF8BEA /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088A5AF820211A1100BF8BEA /* MenuCoordinator.swift */; };
 		088A5AFB20211A1A00BF8BEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 088A5AFA20211A1A00BF8BEA /* Main.storyboard */; };
@@ -69,6 +74,11 @@
 		087745C72025BBE00096409E /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		087745C92025BBEA0096409E /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		087745CB2025BBF20096409E /* CategoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCellViewModel.swift; sourceTree = "<group>"; };
+		087745CE2025C0E20096409E /* AddCategory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddCategory.storyboard; sourceTree = "<group>"; };
+		087745D02025C0EF0096409E /* AddCategoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryCoordinator.swift; sourceTree = "<group>"; };
+		087745D32025C1100096409E /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
+		087745D52025C11A0096409E /* AddCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewModel.swift; sourceTree = "<group>"; };
+		087745D72025C55C0096409E /* AddCategoryPresentationBahavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryPresentationBahavior.swift; sourceTree = "<group>"; };
 		088A5AF620211A0700BF8BEA /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		088A5AF820211A1100BF8BEA /* MenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
 		088A5AFA20211A1A00BF8BEA /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -119,9 +129,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		087745CD2025C0D80096409E /* AddCategory */ = {
+			isa = PBXGroup;
+			children = (
+				087745D22025C0FC0096409E /* Main */,
+				087745CE2025C0E20096409E /* AddCategory.storyboard */,
+				087745D02025C0EF0096409E /* AddCategoryCoordinator.swift */,
+			);
+			path = AddCategory;
+			sourceTree = "<group>";
+		};
+		087745D22025C0FC0096409E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				087745D32025C1100096409E /* AddCategoryViewController.swift */,
+				087745D52025C11A0096409E /* AddCategoryViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		088A5AF3202119FB00BF8BEA /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				087745CD2025C0D80096409E /* AddCategory */,
 				4C7E52722022186C001585D7 /* Expences */,
 				4C7E526D20221846001585D7 /* AddExpences */,
 				088A5AF4202119FB00BF8BEA /* Main */,
@@ -182,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				08A8A0492022619300284D5D /* MenuPresentationBehavior.swift */,
+				087745D72025C55C0096409E /* AddCategoryPresentationBahavior.swift */,
 			);
 			path = Behavior;
 			sourceTree = "<group>";
@@ -395,6 +426,7 @@
 				4C3DC9E02020B63A007CFE54 /* Images.xcassets in Resources */,
 				4C7E52762022188E001585D7 /* Expences.storyboard in Resources */,
 				087745C42025BB5C0096409E /* AddCategoryCell.xib in Resources */,
+				087745CF2025C0E20096409E /* AddCategory.storyboard in Resources */,
 				4C7E527020221846001585D7 /* AddExpences.storyboard in Resources */,
 				088A5AFD20211A2100BF8BEA /* Menu.storyboard in Resources */,
 				087745CA2025BBEA0096409E /* CategoryCell.xib in Resources */,
@@ -439,11 +471,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/../Pods/Target Support Files/Pods-Budget/Pods-Budget-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -492,20 +532,24 @@
 			files = (
 				4C3DC9E72020B6D2007CFE54 /* Coordinator.swift in Sources */,
 				088A5B0320211EA900BF8BEA /* MainContainerViewController.swift in Sources */,
+				087745D12025C0EF0096409E /* AddCategoryCoordinator.swift in Sources */,
 				087745C62025BB660096409E /* AddCategoryCellViewModel.swift in Sources */,
 				088A5AF720211A0700BF8BEA /* MainCoordinator.swift in Sources */,
 				088A5B0A20211F9C00BF8BEA /* MenuViewModel.swift in Sources */,
 				4C3DC9E52020B6AC007CFE54 /* AppCoordinator.swift in Sources */,
 				087745C22025BB500096409E /* AddCategoryCell.swift in Sources */,
+				087745D62025C11A0096409E /* AddCategoryViewModel.swift in Sources */,
 				088A5B0820211F8300BF8BEA /* MenuViewController.swift in Sources */,
 				08A8A04D2022658D00284D5D /* SelectCategoryViewController.swift in Sources */,
 				087745CC2025BBF20096409E /* CategoryCellViewModel.swift in Sources */,
+				087745D42025C1100096409E /* AddCategoryViewController.swift in Sources */,
 				4C3DC9F02020BA19007CFE54 /* R.generated.swift in Sources */,
 				4C3DC9E22020B661007CFE54 /* AppInitializer.swift in Sources */,
 				087745C82025BBE00096409E /* CategoryCell.swift in Sources */,
 				088A5B0C20211FF900BF8BEA /* NavigationController.swift in Sources */,
 				4C7E5280202218F8001585D7 /* ExpencesViewModel.swift in Sources */,
 				088A5AF920211A1100BF8BEA /* MenuCoordinator.swift in Sources */,
+				087745D82025C55C0096409E /* AddCategoryPresentationBahavior.swift in Sources */,
 				08A8A04F2022688600284D5D /* SelectCategoryViewModel.swift in Sources */,
 				088A5B0120211E8B00BF8BEA /* ViewController.swift in Sources */,
 				4C7E527120221846001585D7 /* AddExpensesCoordinator.swift in Sources */,
