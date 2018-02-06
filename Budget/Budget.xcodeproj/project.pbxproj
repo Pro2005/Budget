@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0866ED13202A4BE3000E5FD2 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0866ED12202A4BE3000E5FD2 /* ViewModelType.swift */; };
 		087745C22025BB500096409E /* AddCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087745C12025BB500096409E /* AddCategoryCell.swift */; };
 		087745C42025BB5C0096409E /* AddCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 087745C32025BB5C0096409E /* AddCategoryCell.xib */; };
 		087745C62025BB660096409E /* AddCategoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087745C52025BB660096409E /* AddCategoryCellViewModel.swift */; };
@@ -68,6 +69,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0866ED12202A4BE3000E5FD2 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		087745C12025BB500096409E /* AddCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryCell.swift; sourceTree = "<group>"; };
 		087745C32025BB5C0096409E /* AddCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCategoryCell.xib; sourceTree = "<group>"; };
 		087745C52025BB660096409E /* AddCategoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryCellViewModel.swift; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 			children = (
 				08A8A0482022618A00284D5D /* Behavior */,
 				4C3DC9E62020B6D2007CFE54 /* Coordinator.swift */,
+				0866ED12202A4BE3000E5FD2 /* ViewModelType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				088A5B0A20211F9C00BF8BEA /* MenuViewModel.swift in Sources */,
 				4C3DC9E52020B6AC007CFE54 /* AppCoordinator.swift in Sources */,
 				087745C22025BB500096409E /* AddCategoryCell.swift in Sources */,
+				0866ED13202A4BE3000E5FD2 /* ViewModelType.swift in Sources */,
 				087745D62025C11A0096409E /* AddCategoryViewModel.swift in Sources */,
 				088A5B0820211F8300BF8BEA /* MenuViewController.swift in Sources */,
 				08A8A04D2022658D00284D5D /* SelectCategoryViewController.swift in Sources */,

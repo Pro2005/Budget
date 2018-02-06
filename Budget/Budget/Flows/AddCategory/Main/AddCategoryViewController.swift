@@ -19,7 +19,7 @@ class AddCategoryViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindViewModel()
+        setup()
     }
     
     // Actions
@@ -34,8 +34,13 @@ class AddCategoryViewController: ViewController {
 
     // MARK: Private
     
+    private func setup() {
+        bindViewModel()
+    }
+    
     private func bindViewModel() {
         textField.reactive.text <~ viewModel.name
+        addButton.reactive.pressed = CocoaAction(viewModel.save)
     }
     
 }

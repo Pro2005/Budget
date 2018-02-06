@@ -9,6 +9,7 @@
 import Foundation
 import ReactiveSwift
 import ReactiveCocoa
+import Result
 
 protocol AddCategoryViewModelDelegate: class {
     func viewModelWantClose(_ viewModel: AddCategoryViewController.ViewModel)
@@ -16,9 +17,15 @@ protocol AddCategoryViewModelDelegate: class {
 
 extension AddCategoryViewController {
     
-    struct ViewModel {
+    class ViewModel: ViewModelType {
         weak var delegate: AddCategoryViewModelDelegate?
         let name = MutableProperty<String>("")
+        lazy var save = Action<Void, Void, NoError> {[weak self] value in
+            print(value)
+            return SignalProducer{ signal, lifetime in
+                signal.sendCompleted()
+            }
+        }
         
         // MARK: Public
         
