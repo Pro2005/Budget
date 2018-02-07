@@ -17,14 +17,11 @@ protocol AddCategoryViewModelDelegate: class {
 
 extension AddCategoryViewController {
     
-    class ViewModel: ViewModelType {
+    struct ViewModel: ViewModelType {
         weak var delegate: AddCategoryViewModelDelegate?
         let name = MutableProperty<String>("")
-        lazy var save = Action<Void, Void, NoError> {[weak self] value in
-            print(value)
-            return SignalProducer{ signal, lifetime in
-                signal.sendCompleted()
-            }
+        lazy var save = Action<Void, Void, AnyError> {[validate] in
+            return validate().then
         }
         
         // MARK: Public
@@ -33,6 +30,19 @@ extension AddCategoryViewController {
             delegate?.viewModelWantClose(self)
         }
         
+        func validate() -> SignalProducer<Void, AnyError> {
+            return SignalProducer {[name] observer, lifetime in
+                lifetime.observeEnded {
+                    
+                }
+                guard name.value.count > 0 else {
+                    let error = NSError(domain: "", code: 1011, userInfo: nil)
+                    observer.send(error: .init(error))
+                    return
+                }
+                observer.send(value: ())
+                observer.sendCompleted()
+            }
+        }
     }
-    
 }
