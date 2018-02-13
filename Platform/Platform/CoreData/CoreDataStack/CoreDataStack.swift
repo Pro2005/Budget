@@ -54,7 +54,7 @@ final class CoreDataStack {
         do {
             try persistentStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeURL, options: nil)
         } catch {
-            return SignalProducer(error: error)
+            return SignalProducer(error: .init(error))
         }
         didSetup = true
         return SignalProducer(value: self)
