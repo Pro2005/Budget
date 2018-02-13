@@ -14,9 +14,15 @@ import Result
 struct CategoryUseCase: Domain.CategoryUseCase {
     
     func add(_ name: String) -> SignalProducer<Void, AnyError> {
-        return SignalProducer {signal, lifetime in
-            signal.sendCompleted()
-        }
+        return CoreDataStack.shared().flatMap(.concat, { (stack: CoreDataStack) in
+            return SignalProducer<Void, AnyError> { observer, lifetime in
+                
+                
+                
+                observer.send(value: ())
+                observer.sendCompleted()
+            }
+        })
     }
     
 }

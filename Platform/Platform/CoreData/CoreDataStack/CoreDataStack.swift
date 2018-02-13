@@ -46,6 +46,69 @@ final class CoreDataStack {
         return setup()
     }
     
+    // MARK: Public
+    
+    func fetchAll<T: NSManagedObject>(typeEntity: T.Type, by predicate: NSPredicate? = nil) -> SignalProducer<[T], AnyError> {
+        return SignalProducer {[unowned context = context] observer, lifetime in
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: typeEntity))
+            if let predicate = predicate {
+                fetchRequest.predicate = predicate
+            }
+            var result: [T] = []
+            do {
+                result = try context.fetch(fetchRequest) as! [T]
+            } catch {
+                observer.send(error: .init(error))
+            }
+            observer.send(value: result)
+            observer.sendCompleted()
+        }
+    }
+    
+    func count<T: NSManagedObject>(typeEntity: T.Type, by predicate: NSPredicate? = nil) -> SignalProducer<Int, AnyError> {
+        return SignalProducer {[unowned context = context] observer, lifetime in
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: typeEntity))
+            if let predicate = predicate {
+                fetchRequest.predicate = predicate
+            }
+            var result: Int = 0
+            do {
+                result = try context.count(for: fetchRequest)
+            } catch {
+                observer.send(error: .init(error))
+            }
+            observer.send(value: result)
+            observer.sendCompleted()
+        }
+    }
+    
+    func save(block: @escaping (NSManagedObjectContext) -> Void) -> SignalProducer<Void, AnyError> {
+        return privateManagedObjectContext()
+            .flatMap(.concat, {[weak context = context] privateContext in
+            return SignalProducer<Void, AnyError>{ observer, lifetime in
+                privateContext.perform {
+                    block(privateContext)
+                    
+                    guard let context = context else {
+                        observer.sendInterrupted()
+                        return
+                    }
+                    context.performAndWait {
+                        do {
+                            try context.save()
+                        } catch {
+                            observer.send(error: .init(error))
+                        }
+                        observer.send(value: ())
+                        observer.sendCompleted()
+                    }
+                }
+            }
+        })
+    }
+    
+    // MARK: Private
+    
     private func setup() -> SignalProducer<CoreDataStack, AnyError> {
         guard let documentURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last else {
             fatalError()
@@ -60,107 +123,10 @@ final class CoreDataStack {
         return SignalProducer(value: self)
     }
     
+    private func privateManagedObjectContext() -> SignalProducer<NSManagedObjectContext, AnyError> {
+        let privateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        privateContext.parent = context
+        return SignalProducer(value: privateContext)
+    }
+    
 }
-
-/*
- 
- // MARK: Public
- 
-
- didSetup = true
- return Promise<CoreDataStack>(value: self)
- }
- 
- // MARK: Public
- 
- func fetchAll<T: NSManagedObject>(typeEntity: T.Type, by predicate: NSPredicate? = nil) -> Promise<[T]> {
- return Promise {[weak self] fulfill, rejected in
- guard let `self` = self else {
- rejected(NSError.cancelledError())
- return
- }
- let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: typeEntity))
- if let predicate = predicate {
- fetchRequest.predicate = predicate
- }
- let result = try self.context.fetch(fetchRequest) as! [T]
- fulfill(result)
- }
- }
- 
- func count<T: NSManagedObject>(typeEntity: T.Type, by predicate: NSPredicate? = nil) -> Promise<Int> {
- return Promise {[weak self] fulfill, rejected in
- guard let `self` = self else {
- rejected(NSError.cancelledError())
- return
- }
- let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: typeEntity))
- if let predicate = predicate {
- fetchRequest.predicate = predicate
- }
- let result = try self.context.count(for: fetchRequest)
- fulfill(result)
- }
- }
- 
- func save(block: @escaping (NSManagedObjectContext) -> Void) -> Promise<Void> {
- return Promise {[weak self] fulfill, reject in
- guard let `self` = self else {
- reject(NSError.cancelledError())
- return
- }
- let privateContext = self.privateManagedObjectContext()
- privateContext.perform {
- block(privateContext)
- do {
- try privateContext.save()
- } catch {
- reject(error)
- }
- self.context.performAndWait {
- do {
- try self.context.save()
- } catch {
- reject(error)
- }
- fulfill(())
- }
- }
- 
- }
- /*
- let privateContext = privateManagedObjectContext()
- let pendingPromise = Promise<()>.pending()
- privateContext.perform {[weak self] in
- guard let `self` = self else {
- pendingPromise.reject(NSError.cancelledError())
- return
- }
- block(privateContext)
- do {
- try privateContext.save()
- } catch {
- pendingPromise.reject(error)
- }
- self.context.performAndWait {
- do {
- try self.context.save()
- } catch {
- pendingPromise.reject(error)
- }
- 
- pendingPromise.fulfill(())
- }
- }
- return pendingPromise.promise*/
- }
- 
- // MARK: Private
- 
- private func privateManagedObjectContext() -> NSManagedObjectContext {
- let localContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
- localContext.parent = context
- return localContext
- }
- 
- }*/
