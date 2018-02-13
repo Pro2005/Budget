@@ -8,4 +8,10 @@
 
 import Foundation
 
-public protocol UseCaseProvider {}
+public protocol UseCaseProvider: CategoryUseCaseProvider {}
+
+public protocol CategoryUseCaseProvider {
+
+    var categoryUseCase: CategoryUseCase { get }
+    
+}

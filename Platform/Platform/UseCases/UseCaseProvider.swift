@@ -10,9 +10,13 @@ import Foundation
 import Domain
 
 public struct UseCaseProvider: Domain.UseCaseProvider {
-    
+
     public init() {
         // do nothing
+    }
+    
+    public var categoryUseCase: Domain.CategoryUseCase {
+        return CategoryUseCase()
     }
     
 }

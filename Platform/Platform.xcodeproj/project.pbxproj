@@ -10,6 +10,11 @@
 		4C3DC9AE2020B166007CFE54 /* Platform.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C3DC9AC2020B166007CFE54 /* Platform.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4C3DC9D92020B584007CFE54 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C3DC9DA2020B584007CFE54 /* Domain.framework */; };
 		4C3DC9F32020BCF3007CFE54 /* UseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3DC9F22020BCF3007CFE54 /* UseCaseProvider.swift */; };
+		4C545BF12032FD610010BF74 /* CategoryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C545BF02032FD610010BF74 /* CategoryUseCase.swift */; };
+		4C545BF520330DFE0010BF74 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C545BF420330DFE0010BF74 /* CoreDataStack.swift */; };
+		4C545BF820330EF30010BF74 /* Bundle+Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C545BF720330EF30010BF74 /* Bundle+Platform.swift */; };
+		4C545BFB20330FEE0010BF74 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C545BF920330FEE0010BF74 /* Model.xcdatamodeld */; };
+		4C545BFE203310C90010BF74 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C545BFD203310C90010BF74 /* Error.swift */; };
 		CADA81B36C937ED27AE8142E /* Pods_Platform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 680B888078685BC7B5EC3E1C /* Pods_Platform.framework */; };
 /* End PBXBuildFile section */
 
@@ -19,6 +24,11 @@
 		4C3DC9AD2020B166007CFE54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C3DC9DA2020B584007CFE54 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C3DC9F22020BCF3007CFE54 /* UseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProvider.swift; sourceTree = "<group>"; };
+		4C545BF02032FD610010BF74 /* CategoryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryUseCase.swift; sourceTree = "<group>"; };
+		4C545BF420330DFE0010BF74 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		4C545BF720330EF30010BF74 /* Bundle+Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Platform.swift"; sourceTree = "<group>"; };
+		4C545BFA20330FEE0010BF74 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		4C545BFD203310C90010BF74 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		6186C48B361D4DF2B2D3816F /* Pods-Platform.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Platform.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Platform/Pods-Platform.debug.xcconfig"; sourceTree = "<group>"; };
 		680B888078685BC7B5EC3E1C /* Pods_Platform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Platform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F596878FB8DF04A8B2B153EA /* Pods-Platform.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Platform.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Platform/Pods-Platform.release.xcconfig"; sourceTree = "<group>"; };
@@ -67,6 +77,8 @@
 		4C3DC9AB2020B166007CFE54 /* Platform */ = {
 			isa = PBXGroup;
 			children = (
+				4C545BF620330EE80010BF74 /* Extensions */,
+				4C545BF220330DE00010BF74 /* CoreData */,
 				4C3DC9F12020BCBE007CFE54 /* UseCases */,
 				4C3DC9AC2020B166007CFE54 /* Platform.h */,
 				4C3DC9AD2020B166007CFE54 /* Info.plist */,
@@ -78,8 +90,43 @@
 			isa = PBXGroup;
 			children = (
 				4C3DC9F22020BCF3007CFE54 /* UseCaseProvider.swift */,
+				4C545BF02032FD610010BF74 /* CategoryUseCase.swift */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		4C545BF220330DE00010BF74 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				4C545BFC203310BF0010BF74 /* Error */,
+				4C545BF320330DF50010BF74 /* CoreDataStack */,
+				4C545BF920330FEE0010BF74 /* Model.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		4C545BF320330DF50010BF74 /* CoreDataStack */ = {
+			isa = PBXGroup;
+			children = (
+				4C545BF420330DFE0010BF74 /* CoreDataStack.swift */,
+			);
+			path = CoreDataStack;
+			sourceTree = "<group>";
+		};
+		4C545BF620330EE80010BF74 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4C545BF720330EF30010BF74 /* Bundle+Platform.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4C545BFC203310BF0010BF74 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				4C545BFD203310C90010BF74 /* Error.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		C898B108834BEBE5A19ECF1C /* Frameworks */ = {
@@ -209,7 +256,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C545BF520330DFE0010BF74 /* CoreDataStack.swift in Sources */,
 				4C3DC9F32020BCF3007CFE54 /* UseCaseProvider.swift in Sources */,
+				4C545BFB20330FEE0010BF74 /* Model.xcdatamodeld in Sources */,
+				4C545BF820330EF30010BF74 /* Bundle+Platform.swift in Sources */,
+				4C545BFE203310C90010BF74 /* Error.swift in Sources */,
+				4C545BF12032FD610010BF74 /* CategoryUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +450,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4C545BF920330FEE0010BF74 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4C545BFA20330FEE0010BF74 /* Model.xcdatamodel */,
+			);
+			currentVersion = 4C545BFA20330FEE0010BF74 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4C3DC9A02020B166007CFE54 /* Project object */;
 }

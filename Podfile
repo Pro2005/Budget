@@ -9,6 +9,8 @@ use_frameworks!
 
 def common_pods
     
+    pod 'ReactiveSwift', '~> 3.1.0'
+    
 end
 
 target ‘Budget’ do
@@ -17,7 +19,6 @@ target ‘Budget’ do
     pod 'R.swift', '~> 4.0.0'
     pod 'SwiftLint', '~> 0.24.2'
     pod 'IQKeyboardManagerSwift', '~> 5.0.7'
-    pod 'ReactiveSwift', '~> 3.1.0'
     pod 'ReactiveCocoa', '~> 7.1.0'
     common_pods
 end

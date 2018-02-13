@@ -10,6 +10,7 @@ import Foundation
 import ReactiveSwift
 import ReactiveCocoa
 import Result
+import Domain
 
 protocol AddCategoryViewModelDelegate: class {
     func viewModelWantClose(_ viewModel: AddCategoryViewController.ViewModel)
@@ -20,8 +21,21 @@ extension AddCategoryViewController {
     struct ViewModel: ViewModelType {
         weak var delegate: AddCategoryViewModelDelegate?
         let name = MutableProperty<String>("")
-        lazy var save = Action<Void, Void, AnyError> {[validate] in
-            return validate().then
+        var save: Action<Void, Void, NoError>
+        private let categoryUseCase: Domain.CategoryUseCase
+        
+        init(useCaseProvider: Domain.UseCaseProvider) {
+            categoryUseCase = useCaseProvider.categoryUseCase
+            save = Action(execute: {[weak name = name, useCase = categoryUseCase] in
+                return SignalProducer { signal, _ in
+                    guard let name = name, name.value.count > 0 else {
+                        signal.sendInterrupted()
+                        return
+                    }
+                    useCase.add(name.value)
+                    signal.sendCompleted()
+                }
+            })
         }
         
         // MARK: Public
@@ -30,19 +44,5 @@ extension AddCategoryViewController {
             delegate?.viewModelWantClose(self)
         }
         
-        func validate() -> SignalProducer<Void, AnyError> {
-            return SignalProducer {[name] observer, lifetime in
-                lifetime.observeEnded {
-                    
-                }
-                guard name.value.count > 0 else {
-                    let error = NSError(domain: "", code: 1011, userInfo: nil)
-                    observer.send(error: .init(error))
-                    return
-                }
-                observer.send(value: ())
-                observer.sendCompleted()
-            }
-        }
     }
 }
