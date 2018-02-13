@@ -26,7 +26,7 @@ class AddExpensesCoordinator: Coordinator {
     // MARK: Private
     
     private func createSelectCategoryViewController() -> UIViewController {
-        var viewModel = SelectCategoryViewModel()
+        let viewModel = SelectCategoryViewController.ViewModel(useCaseProvider)
         viewModel.delegate = self
         let viewController = R.storyboard.addExpences.selectCategoryViewController()!
         viewController.viewModel = viewModel
@@ -37,7 +37,7 @@ class AddExpensesCoordinator: Coordinator {
 
 extension AddExpensesCoordinator: SelectCategoryViewModelDelegate {
     
-    func selectCategoryViewModelWantAddCategory(_ viewModel: SelectCategoryViewModel) {
+    func selectCategoryViewModelWantAddCategory(_ viewModel: SelectCategoryViewController.ViewModel) {
         openAddCategory()
     }
     

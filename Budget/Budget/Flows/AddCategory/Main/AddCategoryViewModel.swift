@@ -18,22 +18,25 @@ protocol AddCategoryViewModelDelegate: class {
 
 extension AddCategoryViewController {
     
-    struct ViewModel: ViewModelType {
+    class ViewModel: ViewModelType {
         weak var delegate: AddCategoryViewModelDelegate?
         let name = MutableProperty<String>("")
-        var save: Action<Void, Void, NoError>
+        var save: Action<Void, Void, AnyError>
         private let categoryUseCase: Domain.CategoryUseCase
         
-        init(useCaseProvider: Domain.UseCaseProvider) {
+        init(_ useCaseProvider: Domain.CategoryUseCaseProvider) {
             categoryUseCase = useCaseProvider.categoryUseCase
             save = Action(execute: {[weak name = name, useCase = categoryUseCase] in
-                return SignalProducer { signal, _ in
+                return SignalProducer<Void, AnyError> { observer, _  in
                     guard let name = name, name.value.count > 0 else {
-                        signal.sendInterrupted()
+                        observer.sendInterrupted()
                         return
                     }
-                    useCase.add(name.value)
-                    signal.sendCompleted()
+                    let disposable = useCase.add(name.value).on(
+                        failed: {observer.send(error: $0) },
+                        completed: {observer.sendCompleted()},
+                        interrupted: {observer.sendInterrupted() }).start()
+                    
                 }
             })
         }

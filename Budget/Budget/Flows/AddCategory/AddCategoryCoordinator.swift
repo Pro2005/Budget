@@ -26,7 +26,7 @@ class AddCategoryCoordinator: Coordinator {
     // MARK: Private
     
     private func createAddCategoryViewController() -> UIViewController {
-        var viewModel = AddCategoryViewController.ViewModel(useCaseProvider: useCaseProvider)
+        let viewModel = AddCategoryViewController.ViewModel(useCaseProvider)
         viewModel.delegate = self
         let viewController = R.storyboard.addCategory.addCategoryViewController()!
         viewController.viewModel = viewModel

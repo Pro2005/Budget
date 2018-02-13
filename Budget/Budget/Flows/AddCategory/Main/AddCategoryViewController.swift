@@ -40,6 +40,9 @@ class AddCategoryViewController: ViewController {
     
     private func bindViewModel() {
         textField.reactive.text <~ viewModel.name
+        viewModel.name <~ textField.reactive.continuousTextValues.map({ (string) -> String in
+            return string ?? ""
+        })
         addButton.reactive.pressed = CocoaAction(viewModel.save)
     }
     

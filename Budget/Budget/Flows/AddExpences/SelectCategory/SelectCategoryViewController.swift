@@ -9,7 +9,7 @@
 import UIKit
 
 class SelectCategoryViewController: ViewController {
-    var viewModel: SelectCategoryViewModel!
+    var viewModel: ViewModel!
     @IBOutlet private weak var collectionView: UICollectionView!
 
     override func viewDidLoad() {

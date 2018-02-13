@@ -12,6 +12,7 @@ import ReactiveSwift
 
 public protocol CategoryUseCase {
     
+    func fetchAll() -> SignalProducer<[Category], AnyError>
     func add(_ name: String) -> SignalProducer<Void, AnyError>
     
 }

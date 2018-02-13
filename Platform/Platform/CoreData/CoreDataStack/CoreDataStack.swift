@@ -101,6 +101,7 @@ final class CoreDataStack {
                         }
                         observer.send(value: ())
                         observer.sendCompleted()
+                        print("did save")
                     }
                 }
             }

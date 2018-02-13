@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08F336E820337B3F0029E1F5 /* NSManagedObjectContext+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F336E720337B3F0029E1F5 /* NSManagedObjectContext+Create.swift */; };
+		08F336EE2033909C0029E1F5 /* DomainConvertibleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F336ED2033909C0029E1F5 /* DomainConvertibleType.swift */; };
+		08F336F0203390BE0029E1F5 /* Sequence+DomainConvertibleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F336EF203390BE0029E1F5 /* Sequence+DomainConvertibleType.swift */; };
+		08F336F3203390EA0029E1F5 /* CategoryEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F336F1203390EA0029E1F5 /* CategoryEntity+CoreDataClass.swift */; };
+		08F336F4203390EA0029E1F5 /* CategoryEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F336F2203390EA0029E1F5 /* CategoryEntity+CoreDataProperties.swift */; };
 		4C3DC9AE2020B166007CFE54 /* Platform.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C3DC9AC2020B166007CFE54 /* Platform.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4C3DC9D92020B584007CFE54 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C3DC9DA2020B584007CFE54 /* Domain.framework */; };
 		4C3DC9F32020BCF3007CFE54 /* UseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3DC9F22020BCF3007CFE54 /* UseCaseProvider.swift */; };
@@ -19,6 +24,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08F336E720337B3F0029E1F5 /* NSManagedObjectContext+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Create.swift"; sourceTree = "<group>"; };
+		08F336ED2033909C0029E1F5 /* DomainConvertibleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainConvertibleType.swift; sourceTree = "<group>"; };
+		08F336EF203390BE0029E1F5 /* Sequence+DomainConvertibleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+DomainConvertibleType.swift"; sourceTree = "<group>"; };
+		08F336F1203390EA0029E1F5 /* CategoryEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		08F336F2203390EA0029E1F5 /* CategoryEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4C3DC9A92020B166007CFE54 /* Platform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Platform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C3DC9AC2020B166007CFE54 /* Platform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Platform.h; sourceTree = "<group>"; };
 		4C3DC9AD2020B166007CFE54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,6 +66,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		08F336E620337A9D0029E1F5 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				08F336F1203390EA0029E1F5 /* CategoryEntity+CoreDataClass.swift */,
+				08F336F2203390EA0029E1F5 /* CategoryEntity+CoreDataProperties.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		08F336EC203390960029E1F5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				08F336ED2033909C0029E1F5 /* DomainConvertibleType.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		4C3DC99F2020B166007CFE54 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +104,7 @@
 		4C3DC9AB2020B166007CFE54 /* Platform */ = {
 			isa = PBXGroup;
 			children = (
+				08F336EC203390960029E1F5 /* Protocols */,
 				4C545BF620330EE80010BF74 /* Extensions */,
 				4C545BF220330DE00010BF74 /* CoreData */,
 				4C3DC9F12020BCBE007CFE54 /* UseCases */,
@@ -98,6 +126,7 @@
 		4C545BF220330DE00010BF74 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				08F336E620337A9D0029E1F5 /* Entities */,
 				4C545BFC203310BF0010BF74 /* Error */,
 				4C545BF320330DF50010BF74 /* CoreDataStack */,
 				4C545BF920330FEE0010BF74 /* Model.xcdatamodeld */,
@@ -117,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				4C545BF720330EF30010BF74 /* Bundle+Platform.swift */,
+				08F336E720337B3F0029E1F5 /* NSManagedObjectContext+Create.swift */,
+				08F336EF203390BE0029E1F5 /* Sequence+DomainConvertibleType.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -257,11 +288,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C545BF520330DFE0010BF74 /* CoreDataStack.swift in Sources */,
+				08F336F0203390BE0029E1F5 /* Sequence+DomainConvertibleType.swift in Sources */,
+				08F336F3203390EA0029E1F5 /* CategoryEntity+CoreDataClass.swift in Sources */,
 				4C3DC9F32020BCF3007CFE54 /* UseCaseProvider.swift in Sources */,
+				08F336E820337B3F0029E1F5 /* NSManagedObjectContext+Create.swift in Sources */,
 				4C545BFB20330FEE0010BF74 /* Model.xcdatamodeld in Sources */,
 				4C545BF820330EF30010BF74 /* Bundle+Platform.swift in Sources */,
+				08F336EE2033909C0029E1F5 /* DomainConvertibleType.swift in Sources */,
 				4C545BFE203310C90010BF74 /* Error.swift in Sources */,
 				4C545BF12032FD610010BF74 /* CategoryUseCase.swift in Sources */,
+				08F336F4203390EA0029E1F5 /* CategoryEntity+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

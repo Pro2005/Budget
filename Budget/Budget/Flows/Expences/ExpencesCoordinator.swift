@@ -26,7 +26,7 @@ class ExpencesCoordinator: Coordinator {
     // MARK: Private
     
     private func createMainViewController() -> UIViewController {
-        let viewModel = ExpencesViewModel()
+        let viewModel = ExpencesViewController.ViewModel()
         let viewController = R.storyboard.expences.expencesViewController()!
         viewController.viewModel = viewModel
         return viewController

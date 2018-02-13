@@ -9,5 +9,5 @@
 import Foundation
 
 class ExpencesViewController: ViewController {
-    var viewModel: ExpencesViewModel!
+    var viewModel: ViewModel!
 }

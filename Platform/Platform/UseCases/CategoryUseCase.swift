@@ -10,18 +10,24 @@ import Foundation
 import Domain
 import ReactiveSwift
 import Result
+import CoreData
 
 struct CategoryUseCase: Domain.CategoryUseCase {
     
+    func fetchAll() -> SignalProducer<[Domain.Category], AnyError> {
+        return CoreDataStack.shared().flatMap(.concat, { (stack: CoreDataStack) in
+            return stack.fetchAll(typeEntity: CategoryEntity.self).map({ (entities) -> [Domain.Category] in
+                return entities.mapToDomain()
+            })
+        })
+    }
+    
     func add(_ name: String) -> SignalProducer<Void, AnyError> {
         return CoreDataStack.shared().flatMap(.concat, { (stack: CoreDataStack) in
-            return SignalProducer<Void, AnyError> { observer, lifetime in
-                
-                
-                
-                observer.send(value: ())
-                observer.sendCompleted()
-            }
+            return stack.save(block: { (context: NSManagedObjectContext) in
+                let newCategory: CategoryEntity = context.create()
+                newCategory.name = name
+            })
         })
     }
     

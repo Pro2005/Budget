@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08F336EB20338BC20029E1F5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F336EA20338BC20029E1F5 /* Category.swift */; };
 		4C3DC9992020B142007CFE54 /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C3DC9972020B142007CFE54 /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4C3DC9EB2020B833007CFE54 /* UseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3DC9EA2020B833007CFE54 /* UseCaseProvider.swift */; };
 		4C545BEF2032FACE0010BF74 /* CategoryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C545BEE2032FACE0010BF74 /* CategoryUseCase.swift */; };
@@ -15,6 +16,7 @@
 
 /* Begin PBXFileReference section */
 		010061776D39C25A94D6AC4E /* Pods-Domain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Domain.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Domain/Pods-Domain.release.xcconfig"; sourceTree = "<group>"; };
+		08F336EA20338BC20029E1F5 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		4C3DC9942020B142007CFE54 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C3DC9972020B142007CFE54 /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		4C3DC9982020B142007CFE54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -36,6 +38,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08F336E920338BBB0029E1F5 /* Entries */ = {
+			isa = PBXGroup;
+			children = (
+				08F336EA20338BC20029E1F5 /* Category.swift */,
+			);
+			path = Entries;
+			sourceTree = "<group>";
+		};
 		281F79D746BF5B5CB7C56646 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -66,19 +76,12 @@
 		4C3DC9962020B142007CFE54 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				4C3DC9E82020B7ED007CFE54 /* Entries */,
+				08F336E920338BBB0029E1F5 /* Entries */,
 				4C3DC9E92020B7ED007CFE54 /* UseCases */,
 				4C3DC9972020B142007CFE54 /* Domain.h */,
 				4C3DC9982020B142007CFE54 /* Info.plist */,
 			);
 			path = Domain;
-			sourceTree = "<group>";
-		};
-		4C3DC9E82020B7ED007CFE54 /* Entries */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entries;
 			sourceTree = "<group>";
 		};
 		4C3DC9E92020B7ED007CFE54 /* UseCases */ = {
@@ -218,6 +221,7 @@
 			files = (
 				4C3DC9EB2020B833007CFE54 /* UseCaseProvider.swift in Sources */,
 				4C545BEF2032FACE0010BF74 /* CategoryUseCase.swift in Sources */,
+				08F336EB20338BC20029E1F5 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
