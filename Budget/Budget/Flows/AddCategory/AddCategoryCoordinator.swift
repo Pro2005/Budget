@@ -37,11 +37,15 @@ class AddCategoryCoordinator: Coordinator {
 
 extension AddCategoryCoordinator: AddCategoryViewModelDelegate {
 
-    func viewModelWantClose(_ viewModel: AddCategoryViewController.ViewModel) {
+    func addCategoryViewModelWantClose(_ viewModel: AddCategoryViewController.ViewModel) {
         guard let coordinator = parent as? AddCategoryPresentationBahavior else {
             return
         }
         coordinator.closeAddCategory(self)
+    }
+    
+    func addCategoryViewModelDidAddCategory(_ viewModel: AddCategoryViewController.ViewModel) {
+        addCategoryViewModelWantClose(viewModel)
     }
     
 }

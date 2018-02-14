@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ReactiveSwift
 
 class SelectCategoryViewController: ViewController {
     var viewModel: ViewModel!
@@ -17,15 +18,25 @@ class SelectCategoryViewController: ViewController {
         setup()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        _ = viewModel.update.apply().take(duringLifetimeOf: self)
+    }
+    
     // MARK: Private
     
     private func setup() {
         setupCollectionView()
+        setupViewModel()
     }
     
     private func setupCollectionView() {
         collectionView.register(R.nib.addCategoryCell)
         collectionView.register(R.nib.categoryCell)
+    }
+    
+    private func setupViewModel() {
+        collectionView.reactive.reloadData <~ viewModel.update.values.map {_ in return ()}
     }
     
 }

@@ -8,6 +8,8 @@
 
 import Foundation
 import Domain
+import Result
+import ReactiveSwift
 
 protocol SelectCategoryViewModelDelegate: class {
     func selectCategoryViewModelWantAddCategory(_ viewModel: SelectCategoryViewController.ViewModel)
@@ -18,12 +20,16 @@ extension SelectCategoryViewController {
         weak var delegate: SelectCategoryViewModelDelegate?
         private(set) var dataSource: [CategoryViewModelTypeable] = []
         private let useCase: Domain.CategoryUseCase
-        
+        lazy var update = Action<Void, [Domain.Category], AnyError>.init(execute: {[weak self]  in
+            guard let `self` = self else {
+                return .never
+            }
+            return self.useCase.fetchAll().flatMap(.latest, { categories in
+                return self.updateDataSource(with: categories)
+            })
+        })
         init(_ useCaseProvider: Domain.CategoryUseCaseProvider) {
             useCase = useCaseProvider.categoryUseCase
-            update()
-    //        let item1 = AddCategoryCell.CellViewModel()
-    //        dataSource.append(item1)
         }
         
         // MARK: Public
@@ -36,18 +42,19 @@ extension SelectCategoryViewController {
         
         // MARK: Private
         
-        private func update() {
-            let disposable = useCase.fetchAll().on(value: {[weak self] categories in
-                self?.updateDataSource(with: categories)
-            }).start()
-
-        }
-        
-        private func updateDataSource(with categories: [Domain.Category]) {
-            let cellViewModels = categories
-                .map {CategoryCell.CellViewModel(name: $0.name)} as [CategoryViewModelTypeable]
-            let addCellViewModel = AddCategoryCell.CellViewModel() as CategoryViewModelTypeable
-            dataSource.append(contentsOf: cellViewModels + [addCellViewModel])
+        private func updateDataSource(with categories: [Domain.Category]) -> SignalProducer<[Domain.Category], NoError> {
+            return SignalProducer<[Domain.Category], NoError> {[weak self] observer, _ in
+                guard let `self` = self else {
+                    return
+                }
+                self.dataSource.removeAll()
+                let cellViewModels = categories
+                    .map {CategoryCell.CellViewModel(name: $0.name)} as [CategoryViewModelTypeable]
+                let addCellViewModel = AddCategoryCell.CellViewModel() as CategoryViewModelTypeable
+                self.dataSource.append(contentsOf: cellViewModels + [addCellViewModel])
+                observer.send(value: categories)
+                observer.sendCompleted()
+            }
         }
         
     }

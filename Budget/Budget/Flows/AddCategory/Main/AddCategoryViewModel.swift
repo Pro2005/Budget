@@ -13,7 +13,8 @@ import Result
 import Domain
 
 protocol AddCategoryViewModelDelegate: class {
-    func viewModelWantClose(_ viewModel: AddCategoryViewController.ViewModel)
+    func addCategoryViewModelWantClose(_ viewModel: AddCategoryViewController.ViewModel)
+    func addCategoryViewModelDidAddCategory(_ viewModel: AddCategoryViewController.ViewModel)
 }
 
 extension AddCategoryViewController {
@@ -21,26 +22,31 @@ extension AddCategoryViewController {
     class ViewModel: ViewModelType {
         weak var delegate: AddCategoryViewModelDelegate?
         let name = MutableProperty<String>("")
-        var save: Action<Void, Void, AnyError>
+        var save: Action<Void, Void, AnyError>!
         private let categoryUseCase: Domain.CategoryUseCase
         
         init(_ useCaseProvider: Domain.CategoryUseCaseProvider) {
             categoryUseCase = useCaseProvider.categoryUseCase
-            save = Action(execute: {[weak name = name, useCase = categoryUseCase] in
+            save = Action(execute: {[weak self] in
                 return SignalProducer<Void, AnyError> { observer, _  in
-                    guard let name = name, name.value.count > 0 else {
+                    guard let name = self?.name, name.value.count > 0 else {
                         observer.sendInterrupted()
                         return
                     }
-                    useCase.add(name.value).start(observer)
-                }
+                    self?.categoryUseCase.add(name.value).start(observer)
+                }.on(completed: {
+                    guard let `self` = self else {
+                        return
+                    }
+                    self.delegate?.addCategoryViewModelDidAddCategory(self)
+                })
             })
         }
         
         // MARK: Public
         
         func close() {
-            delegate?.viewModelWantClose(self)
+            delegate?.addCategoryViewModelWantClose(self)
         }
         
     }
