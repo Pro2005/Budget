@@ -32,11 +32,7 @@ extension AddCategoryViewController {
                         observer.sendInterrupted()
                         return
                     }
-                    let disposable = useCase.add(name.value).on(
-                        failed: {observer.send(error: $0) },
-                        completed: {observer.sendCompleted()},
-                        interrupted: {observer.sendInterrupted() }).start()
-                    
+                    useCase.add(name.value).start(observer)
                 }
             })
         }
