@@ -93,6 +93,11 @@ final class CoreDataStack {
                         observer.sendInterrupted()
                         return
                     }
+                    do {
+                        try privateContext.save()
+                    } catch {
+                        observer.send(error: .init(error))
+                    }
                     context.performAndWait {
                         do {
                             try context.save()
