@@ -8,13 +8,22 @@
 
 import Foundation
 import Domain
+import ReactiveSwift
+import Result
 
 class AddCategoryCoordinator: Coordinator {
     let useCaseProvider: Domain.UseCaseProvider
     weak var parent: Coordinator?
     var children: [Coordinator] = []
     var rootViewController: UIViewController?
-    
+    private lazy var closeAction: Action<Void, Void, NoError> = {
+        return Action(execute: {[weak self] _ in
+            return SignalProducer { observer, _ in
+                self?.close()
+                observer.sendCompleted()
+            }
+        })
+    }()
     // MARK: Initialization
     
     init(_ useCaseProvider: Domain.UseCaseProvider) {
@@ -27,25 +36,24 @@ class AddCategoryCoordinator: Coordinator {
     
     private func createAddCategoryViewController() -> UIViewController {
         let viewModel = AddCategoryViewController.ViewModel(useCaseProvider)
-        viewModel.delegate = self
+//        viewModel.didSave.output.producer <~
+//        viewModel.didSave.output <~ closeAction.completed
+//        closeAction <~ viewModel.didSave.output.on()
+//        viewModel.didSave.output.on() <~ closeAction
+        closeAction <~ viewModel.didSave.output.co
+//        viewModel.didSave.output <~ closeAction.
+//        closeAction <~ viewModel.didSave.output
+//        closeAction <~ viewModel.wantClose.output
         let viewController = R.storyboard.addCategory.addCategoryViewController()!
         viewController.viewModel = viewModel
         return viewController
     }
     
-}
-
-extension AddCategoryCoordinator: AddCategoryViewModelDelegate {
-
-    func addCategoryViewModelWantClose(_ viewModel: AddCategoryViewController.ViewModel) {
+    private func close() {
         guard let coordinator = parent as? AddCategoryPresentationBahavior else {
             return
         }
         coordinator.closeAddCategory(self)
-    }
-    
-    func addCategoryViewModelDidAddCategory(_ viewModel: AddCategoryViewController.ViewModel) {
-        addCategoryViewModelWantClose(viewModel)
     }
     
 }

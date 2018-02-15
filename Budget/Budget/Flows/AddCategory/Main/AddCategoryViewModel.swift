@@ -12,17 +12,13 @@ import ReactiveCocoa
 import Result
 import Domain
 
-protocol AddCategoryViewModelDelegate: class {
-    func addCategoryViewModelWantClose(_ viewModel: AddCategoryViewController.ViewModel)
-    func addCategoryViewModelDidAddCategory(_ viewModel: AddCategoryViewController.ViewModel)
-}
-
 extension AddCategoryViewController {
     
     class ViewModel: ViewModelType {
-        weak var delegate: AddCategoryViewModelDelegate?
         let name = MutableProperty<String>("")
         var save: Action<Void, Void, AnyError>!
+        let didSave = Signal<Void, NoError>.pipe()
+        let wantClose = Signal<Void, NoError>.pipe()
         private let categoryUseCase: Domain.CategoryUseCase
         
         init(_ useCaseProvider: Domain.CategoryUseCaseProvider) {
@@ -34,19 +30,14 @@ extension AddCategoryViewController {
                         return
                     }
                     self?.categoryUseCase.add(name.value).start(observer)
-                }.on(completed: {
-                    guard let `self` = self else {
-                        return
-                    }
-                    self.delegate?.addCategoryViewModelDidAddCategory(self)
-                })
+                    }.on (completed: {self?.didSave.input.sendCompleted()})
             })
         }
         
         // MARK: Public
         
         func close() {
-            delegate?.addCategoryViewModelWantClose(self)
+            wantClose.input.sendCompleted()
         }
         
     }

@@ -16,19 +16,17 @@ class SelectCategoryViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        viewModel.update <~ reactive.trigger(for: #selector(viewDidAppear(_:)))
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        _ = viewModel.update.apply().take(duringLifetimeOf: self)
     }
     
     // MARK: Private
     
     private func setup() {
         setupCollectionView()
-        setupViewModel()
+        bindViewModel()
     }
     
     private func setupCollectionView() {
@@ -36,8 +34,9 @@ class SelectCategoryViewController: ViewController {
         collectionView.register(R.nib.categoryCell)
     }
     
-    private func setupViewModel() {
+    private func bindViewModel() {
         collectionView.reactive.reloadData <~ viewModel.update.values.map {_ in return ()}
+        viewModel.update <~ reactive.trigger(for: #selector(viewDidAppear(_:)))
     }
     
 }
