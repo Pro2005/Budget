@@ -16,11 +16,12 @@ class SelectCategoryViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        viewModel.update <~ reactive.trigger(for: #selector(viewDidAppear(_:)))
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        _ = viewModel.update.apply().take(duringLifetimeOf: self)
+//        _ = viewModel.update.apply().take(duringLifetimeOf: self)
     }
     
     // MARK: Private

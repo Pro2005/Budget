@@ -42,7 +42,8 @@ extension SelectCategoryViewController {
         
         // MARK: Private
         
-        private func updateDataSource(with categories: [Domain.Category]) -> SignalProducer<[Domain.Category], NoError> {
+        private func updateDataSource(with categories: [Domain.Category]) ->
+            SignalProducer<[Domain.Category], NoError> {
             return SignalProducer<[Domain.Category], NoError> {[weak self] observer, _ in
                 guard let `self` = self else {
                     return
