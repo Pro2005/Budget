@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+extension AddExpensesViewController {
+    
+    class ViewModel: ViewModelType {
+        
+    }
+    
+}

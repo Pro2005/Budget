@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Most Used Expenses View Controller-->
+        <!--Most used-->
         <scene sceneID="gja-5O-Lnj">
             <objects>
-                <viewController storyboardIdentifier="MostUsedExpensesViewController" id="HXa-nv-LeC" customClass="MostUsedExpensesViewController" customModule="Budget" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MostUsedExpensesViewController" title="Most used" id="HXa-nv-LeC" customClass="MostUsedExpensesViewController" customModule="Budget" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A5N-pK-57s">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,10 +56,64 @@
             </objects>
             <point key="canvasLocation" x="-482" y="250"/>
         </scene>
-        <!--Select Category View Controller-->
+        <!--Adding-->
+        <scene sceneID="z38-39-epn">
+            <objects>
+                <viewController storyboardIdentifier="AddExpensesViewController" title="Adding" id="oQQ-tz-tdO" customClass="AddExpensesViewController" customModule="Budget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dfc-Lm-YWZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="NAME" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oqA-1z-amw">
+                                <rect key="frame" x="16" y="36" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="oQQ-tz-tdO" id="dTk-Kt-xRL"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBJ-1A-o9k">
+                                <rect key="frame" x="16" y="82" width="343" height="34"/>
+                                <state key="normal" title="SELECT CATEGORY">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3g-sA-DQ6">
+                                <rect key="frame" x="16" y="176" width="343" height="34"/>
+                                <state key="normal" title="ADD">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="M6l-Hd-IdV" firstAttribute="trailing" secondItem="B3g-sA-DQ6" secondAttribute="trailing" constant="16" id="7JC-bg-pvu"/>
+                            <constraint firstItem="UBJ-1A-o9k" firstAttribute="top" secondItem="oqA-1z-amw" secondAttribute="bottom" constant="16" id="7rO-Zb-eM5"/>
+                            <constraint firstItem="oqA-1z-amw" firstAttribute="top" secondItem="M6l-Hd-IdV" secondAttribute="top" constant="16" id="BbM-FJ-mP6"/>
+                            <constraint firstItem="M6l-Hd-IdV" firstAttribute="trailing" secondItem="UBJ-1A-o9k" secondAttribute="trailing" constant="16" id="PI3-B9-BHK"/>
+                            <constraint firstItem="oqA-1z-amw" firstAttribute="leading" secondItem="M6l-Hd-IdV" secondAttribute="leading" constant="16" id="Q8t-F6-7rs"/>
+                            <constraint firstItem="B3g-sA-DQ6" firstAttribute="top" secondItem="UBJ-1A-o9k" secondAttribute="bottom" constant="60" id="jug-18-lWX"/>
+                            <constraint firstItem="M6l-Hd-IdV" firstAttribute="trailing" secondItem="oqA-1z-amw" secondAttribute="trailing" constant="16" id="lO9-Dx-nWh"/>
+                            <constraint firstItem="UBJ-1A-o9k" firstAttribute="leading" secondItem="M6l-Hd-IdV" secondAttribute="leading" constant="16" id="sJh-m4-Rjp"/>
+                            <constraint firstItem="B3g-sA-DQ6" firstAttribute="leading" secondItem="M6l-Hd-IdV" secondAttribute="leading" constant="16" id="xAi-Ia-v3s"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="M6l-Hd-IdV"/>
+                    </view>
+                    <connections>
+                        <outlet property="addButton" destination="B3g-sA-DQ6" id="N3G-GW-Yd0"/>
+                        <outlet property="categoryButton" destination="UBJ-1A-o9k" id="qJb-gR-Du2"/>
+                        <outlet property="textField" destination="oqA-1z-amw" id="I91-lp-8w0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rgp-mo-GJA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="422" y="250"/>
+        </scene>
+        <!--Select category-->
         <scene sceneID="blP-fG-Ud6">
             <objects>
-                <viewController storyboardIdentifier="SelectCategoryViewController" id="qvW-YR-SU0" customClass="SelectCategoryViewController" customModule="Budget" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectCategoryViewController" title="Select category" id="qvW-YR-SU0" customClass="SelectCategoryViewController" customModule="Budget" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vDe-yL-ejl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ozI-sV-fZO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="295" y="250"/>
+            <point key="canvasLocation" x="1270" y="250"/>
         </scene>
     </scenes>
 </document>

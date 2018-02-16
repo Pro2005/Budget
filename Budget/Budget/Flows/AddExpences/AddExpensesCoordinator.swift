@@ -13,14 +13,16 @@ class AddExpensesCoordinator: Coordinator {
     let useCaseProvider: Domain.UseCaseProvider
     weak var parent: Coordinator?
     var children: [Coordinator] = []
-    var rootViewController: UIViewController?
+    var rootViewController: UIViewController? {
+        return navigationController
+    }
+    var navigationController: NavigationController!
     
     // MARK: Initialization
     
     init(_ useCaseProvider: Domain.UseCaseProvider) {
         self.useCaseProvider = useCaseProvider
-        let navigationController = NavigationController(rootViewController: createMostUsedExpensesViewController())
-        rootViewController = navigationController
+        navigationController = NavigationController(rootViewController: createMostUsedExpensesViewController())
     }
     
     // MARK: Private
@@ -41,6 +43,13 @@ class AddExpensesCoordinator: Coordinator {
         return viewController
     }
     
+    private func createAddExpensesViewController() -> UIViewController {
+        let viewModel = AddExpensesViewController.ViewModel()
+        let viewController = R.storyboard.addExpences.addExpensesViewController()!
+        viewController.viewModel = viewModel
+        return viewController
+    }
+    
 }
 
 extension AddExpensesCoordinator: SelectCategoryViewModelDelegate {
@@ -54,7 +63,8 @@ extension AddExpensesCoordinator: SelectCategoryViewModelDelegate {
 extension AddExpensesCoordinator: MostUsedExpensesViewModelDelegate {
     
     func mostUsedViewModelWantAdd(_ viewModel: MostUsedExpensesViewController.ViewModel) {
-        
+        let viewController = createAddExpensesViewController()
+        navigationController.pushViewController(viewController, animated: true)
     }
     
 }
