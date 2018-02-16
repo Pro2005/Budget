@@ -16,14 +16,7 @@ class AddCategoryCoordinator: Coordinator {
     weak var parent: Coordinator?
     var children: [Coordinator] = []
     var rootViewController: UIViewController?
-    private lazy var closeAction: Action<Void, Void, NoError> = {
-        return Action(execute: {[weak self] _ in
-            return SignalProducer { observer, _ in
-                self?.close()
-                observer.sendCompleted()
-            }
-        })
-    }()
+
     // MARK: Initialization
     
     init(_ useCaseProvider: Domain.UseCaseProvider) {
@@ -36,20 +29,25 @@ class AddCategoryCoordinator: Coordinator {
     
     private func createAddCategoryViewController() -> UIViewController {
         let viewModel = AddCategoryViewController.ViewModel(useCaseProvider)
-//        viewModel.didSave.output.producer <~
-//        viewModel.didSave.output <~ closeAction.completed
-//        closeAction <~ viewModel.didSave.output.on()
-//        viewModel.didSave.output.on() <~ closeAction
-        closeAction <~ viewModel.didSave.output.co
-//        viewModel.didSave.output <~ closeAction.
-//        closeAction <~ viewModel.didSave.output
-//        closeAction <~ viewModel.wantClose.output
+        viewModel.delegate = self
         let viewController = R.storyboard.addCategory.addCategoryViewController()!
         viewController.viewModel = viewModel
         return viewController
     }
     
-    private func close() {
+}
+
+extension AddCategoryCoordinator: AddCategoryViewModelDelegate {
+    
+    func addCategoryViewModelDidSave(_ viewModel: AddCategoryViewController.ViewModel) {
+        closeAddCategory()
+    }
+    
+    func addCategoryViewModelWantClose(_ viewModel: AddCategoryViewController.ViewModel) {
+        closeAddCategory()
+    }
+    
+    private func closeAddCategory() {
         guard let coordinator = parent as? AddCategoryPresentationBahavior else {
             return
         }

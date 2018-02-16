@@ -12,32 +12,40 @@ import ReactiveCocoa
 import Result
 import Domain
 
+protocol AddCategoryViewModelDelegate: class {
+    func addCategoryViewModelDidSave(_ viewModel: AddCategoryViewController.ViewModel)
+    func addCategoryViewModelWantClose(_ viewModel: AddCategoryViewController.ViewModel)
+}
+
 extension AddCategoryViewController {
     
     class ViewModel: ViewModelType {
+        weak var delegate: AddCategoryViewModelDelegate?
         let name = MutableProperty<String>("")
-        var save: Action<Void, Void, AnyError>!
-        let didSave = Signal<Void, NoError>.pipe()
-        let wantClose = Signal<Void, NoError>.pipe()
-        private let categoryUseCase: Domain.CategoryUseCase
-        
-        init(_ useCaseProvider: Domain.CategoryUseCaseProvider) {
-            categoryUseCase = useCaseProvider.categoryUseCase
-            save = Action(execute: {[weak self] in
-                return SignalProducer<Void, AnyError> { observer, _  in
+        private(set) lazy var save: Action<Void, Void, AnyError> = {
+            return Action(execute: {[weak self] in
+                return SignalProducer<Void, AnyError> { observer, lifetime  in
                     guard let name = self?.name, name.value.count > 0 else {
                         observer.sendInterrupted()
                         return
                     }
-                    self?.categoryUseCase.add(name.value).start(observer)
-                    }.on (completed: {self?.didSave.input.sendCompleted()})
+                    self?.categoryUseCase.add(name.value).take(during: lifetime).start(observer)
+                }
             })
+        }() 
+        private let categoryUseCase: Domain.CategoryUseCase
+
+        init(_ useCaseProvider: Domain.CategoryUseCaseProvider) {
+            categoryUseCase = useCaseProvider.categoryUseCase
+            save.completed.observeValues {[unowned self] in
+                self.delegate?.addCategoryViewModelDidSave(self)
+            }
         }
         
         // MARK: Public
         
         func close() {
-            wantClose.input.sendCompleted()
+            delegate?.addCategoryViewModelWantClose(self)
         }
         
     }
