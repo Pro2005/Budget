@@ -49,10 +49,10 @@ extension SelectCategoryViewController {
                     return
                 }
                 self.dataSource.removeAll()
-                let cellViewModels = categories
-                    .map {CategoryCell.CellViewModel(name: $0.name)} as [CategoryViewModelTypeable]
-                let addCellViewModel = AddCategoryCell.CellViewModel() as CategoryViewModelTypeable
-                self.dataSource.append(contentsOf: cellViewModels + [addCellViewModel])
+                let ViewModels = categories
+                    .map {CategoryCell.ViewModel(name: $0.name)} as [CategoryViewModelTypeable]
+                let addViewModel = AddCategoryCell.ViewModel() as CategoryViewModelTypeable
+                self.dataSource.append(contentsOf: ViewModels + [addViewModel])
                 observer.send(value: categories)
                 observer.sendCompleted()
             }

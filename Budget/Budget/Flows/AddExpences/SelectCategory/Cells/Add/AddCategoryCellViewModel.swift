@@ -1,5 +1,5 @@
 //
-//  AddCategoryCellViewModel.swift
+//  AddCategoryViewModel.swift
 //  Budget
 //
 //  Created by Pro2005 on 2/3/18.
@@ -10,7 +10,7 @@ import Foundation
 
 extension AddCategoryCell {
     
-    struct CellViewModel: CategoryViewModelTypeable {
+    struct ViewModel: CategoryViewModelTypeable {
         let type: CategoryType = .addNew
     }
     

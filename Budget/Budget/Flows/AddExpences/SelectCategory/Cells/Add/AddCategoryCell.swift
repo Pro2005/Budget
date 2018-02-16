@@ -9,5 +9,5 @@
 import UIKit
 
 class AddCategoryCell: UICollectionViewCell {
-    var viewModel: CellViewModel? 
+    var viewModel: ViewModel? 
 }

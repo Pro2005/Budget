@@ -1,5 +1,5 @@
 //
-//  CategoryCellViewModel.swift
+//  CategoryViewModel.swift
 //  Budget
 //
 //  Created by Pro2005 on 2/3/18.
@@ -19,7 +19,7 @@ protocol CategoryViewModelTypeable {
 
 extension CategoryCell {
     
-    struct CellViewModel: CategoryViewModelTypeable {
+    struct ViewModel: CategoryViewModelTypeable {
         let type: CategoryType = .default
         let name: String
     }

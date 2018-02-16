@@ -49,15 +49,15 @@ extension SelectCategoryViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cellViewModel = viewModel.dataSource[indexPath.row]
-        switch cellViewModel.type {
+        let ViewModel = viewModel.dataSource[indexPath.row]
+        switch ViewModel.type {
         case .addNew:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.nib.addCategoryCell, for: indexPath)!
-            cell.viewModel = cellViewModel as? AddCategoryCell.CellViewModel
+            cell.viewModel = ViewModel as? AddCategoryCell.ViewModel
             return cell
         case .default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.nib.categoryCell, for: indexPath)!
-            cell.viewModel = cellViewModel as? CategoryCell.CellViewModel
+            cell.viewModel = ViewModel as? CategoryCell.ViewModel
             return cell
         }
     }
@@ -67,8 +67,8 @@ extension SelectCategoryViewController: UICollectionViewDataSource {
 extension SelectCategoryViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cellViewModel = viewModel.dataSource[indexPath.row]
-        viewModel.select(cellViewModel)
+        let ViewModel = viewModel.dataSource[indexPath.row]
+        viewModel.select(ViewModel)
     }
     
 }

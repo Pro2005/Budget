@@ -50,6 +50,13 @@
 		4C7E527E202218EA001585D7 /* ExpencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E527D202218EA001585D7 /* ExpencesViewController.swift */; };
 		4C7E5280202218F8001585D7 /* ExpencesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E527F202218F8001585D7 /* ExpencesViewModel.swift */; };
 		4C7E528220221A1F001585D7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E528120221A1F001585D7 /* TabBarController.swift */; };
+		4C9ADC572037277E0001C90C /* MostUsedExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9ADC562037277E0001C90C /* MostUsedExpensesViewController.swift */; };
+		4C9ADC592037278D0001C90C /* MostUsedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9ADC582037278D0001C90C /* MostUsedViewModel.swift */; };
+		4C9ADC5C203728240001C90C /* MostUsedExpensesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9ADC5B203728240001C90C /* MostUsedExpensesCell.swift */; };
+		4C9ADC5E2037282E0001C90C /* MostUsedExpensesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9ADC5D2037282E0001C90C /* MostUsedExpensesCellViewModel.swift */; };
+		4C9ADC60203728370001C90C /* MostUsedExpensesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C9ADC5F203728370001C90C /* MostUsedExpensesCell.xib */; };
+		4C9ADC6320372CF40001C90C /* AddExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9ADC6220372CF40001C90C /* AddExpensesViewController.swift */; };
+		4C9ADC6520372D020001C90C /* AddExpensesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9ADC6420372D020001C90C /* AddExpensesViewModel.swift */; };
 		AF98D132DB08C7801D69F812 /* Pods_Budget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBEF361E060997568C29577 /* Pods_Budget.framework */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +119,13 @@
 		4C7E527D202218EA001585D7 /* ExpencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpencesViewController.swift; sourceTree = "<group>"; };
 		4C7E527F202218F8001585D7 /* ExpencesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpencesViewModel.swift; sourceTree = "<group>"; };
 		4C7E528120221A1F001585D7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		4C9ADC562037277E0001C90C /* MostUsedExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostUsedExpensesViewController.swift; sourceTree = "<group>"; };
+		4C9ADC582037278D0001C90C /* MostUsedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostUsedViewModel.swift; sourceTree = "<group>"; };
+		4C9ADC5B203728240001C90C /* MostUsedExpensesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostUsedExpensesCell.swift; sourceTree = "<group>"; };
+		4C9ADC5D2037282E0001C90C /* MostUsedExpensesCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostUsedExpensesCellViewModel.swift; sourceTree = "<group>"; };
+		4C9ADC5F203728370001C90C /* MostUsedExpensesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MostUsedExpensesCell.xib; sourceTree = "<group>"; };
+		4C9ADC6220372CF40001C90C /* AddExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpensesViewController.swift; sourceTree = "<group>"; };
+		4C9ADC6420372D020001C90C /* AddExpensesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpensesViewModel.swift; sourceTree = "<group>"; };
 		584DB6F43A07356B61B3BCEB /* Pods-Budget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Budget.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Budget/Pods-Budget.release.xcconfig"; sourceTree = "<group>"; };
 		9BBEF361E060997568C29577 /* Pods_Budget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Budget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8EB0FB8CE7D8CC13D34FE3F /* Pods-Budget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Budget.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Budget/Pods-Budget.debug.xcconfig"; sourceTree = "<group>"; };
@@ -333,6 +347,8 @@
 		4C7E526D20221846001585D7 /* AddExpences */ = {
 			isa = PBXGroup;
 			children = (
+				4C9ADC6120372CE30001C90C /* Add */,
+				4C9ADC552037276E0001C90C /* MostUsed */,
 				08A8A04B2022657F00284D5D /* SelectCategory */,
 				4C7E526F20221846001585D7 /* AddExpensesCoordinator.swift */,
 				4C7E526E20221846001585D7 /* AddExpences.storyboard */,
@@ -357,6 +373,35 @@
 				4C7E527F202218F8001585D7 /* ExpencesViewModel.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		4C9ADC552037276E0001C90C /* MostUsed */ = {
+			isa = PBXGroup;
+			children = (
+				4C9ADC5A2037281B0001C90C /* Cell */,
+				4C9ADC562037277E0001C90C /* MostUsedExpensesViewController.swift */,
+				4C9ADC582037278D0001C90C /* MostUsedViewModel.swift */,
+			);
+			path = MostUsed;
+			sourceTree = "<group>";
+		};
+		4C9ADC5A2037281B0001C90C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4C9ADC5B203728240001C90C /* MostUsedExpensesCell.swift */,
+				4C9ADC5D2037282E0001C90C /* MostUsedExpensesCellViewModel.swift */,
+				4C9ADC5F203728370001C90C /* MostUsedExpensesCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		4C9ADC6120372CE30001C90C /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				4C9ADC6220372CF40001C90C /* AddExpensesViewController.swift */,
+				4C9ADC6420372D020001C90C /* AddExpensesViewModel.swift */,
+			);
+			path = Add;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -425,6 +470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				088A5AFB20211A1A00BF8BEA /* Main.storyboard in Resources */,
+				4C9ADC60203728370001C90C /* MostUsedExpensesCell.xib in Resources */,
 				4C3DC9ED2020B91A007CFE54 /* LaunchScreen.storyboard in Resources */,
 				4C3DC9E02020B63A007CFE54 /* Images.xcassets in Resources */,
 				4C7E52762022188E001585D7 /* Expences.storyboard in Resources */,
@@ -535,21 +581,27 @@
 			files = (
 				4C3DC9E72020B6D2007CFE54 /* Coordinator.swift in Sources */,
 				088A5B0320211EA900BF8BEA /* MainContainerViewController.swift in Sources */,
+				4C9ADC5E2037282E0001C90C /* MostUsedExpensesCellViewModel.swift in Sources */,
 				087745D12025C0EF0096409E /* AddCategoryCoordinator.swift in Sources */,
 				087745C62025BB660096409E /* AddCategoryCellViewModel.swift in Sources */,
+				4C9ADC6520372D020001C90C /* AddExpensesViewModel.swift in Sources */,
 				088A5AF720211A0700BF8BEA /* MainCoordinator.swift in Sources */,
 				088A5B0A20211F9C00BF8BEA /* MenuViewModel.swift in Sources */,
 				4C3DC9E52020B6AC007CFE54 /* AppCoordinator.swift in Sources */,
+				4C9ADC5C203728240001C90C /* MostUsedExpensesCell.swift in Sources */,
 				087745C22025BB500096409E /* AddCategoryCell.swift in Sources */,
 				0866ED13202A4BE3000E5FD2 /* ViewModelType.swift in Sources */,
 				087745D62025C11A0096409E /* AddCategoryViewModel.swift in Sources */,
 				088A5B0820211F8300BF8BEA /* MenuViewController.swift in Sources */,
+				4C9ADC572037277E0001C90C /* MostUsedExpensesViewController.swift in Sources */,
 				08A8A04D2022658D00284D5D /* SelectCategoryViewController.swift in Sources */,
 				087745CC2025BBF20096409E /* CategoryCellViewModel.swift in Sources */,
 				087745D42025C1100096409E /* AddCategoryViewController.swift in Sources */,
+				4C9ADC6320372CF40001C90C /* AddExpensesViewController.swift in Sources */,
 				4C3DC9F02020BA19007CFE54 /* R.generated.swift in Sources */,
 				4C3DC9E22020B661007CFE54 /* AppInitializer.swift in Sources */,
 				087745C82025BBE00096409E /* CategoryCell.swift in Sources */,
+				4C9ADC592037278D0001C90C /* MostUsedViewModel.swift in Sources */,
 				088A5B0C20211FF900BF8BEA /* NavigationController.swift in Sources */,
 				4C7E5280202218F8001585D7 /* ExpencesViewModel.swift in Sources */,
 				088A5AF920211A1100BF8BEA /* MenuCoordinator.swift in Sources */,

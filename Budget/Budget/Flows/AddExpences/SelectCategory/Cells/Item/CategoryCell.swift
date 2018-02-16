@@ -10,7 +10,7 @@ import UIKit
 
 class CategoryCell: UICollectionViewCell {
     @IBOutlet private weak var titleLabel: UILabel!
-    var viewModel: CellViewModel? {
+    var viewModel: ViewModel? {
         didSet {
             titleLabel.text = viewModel?.name
         }
